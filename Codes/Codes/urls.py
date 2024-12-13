@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from authorization import render_authorization
+from registration import render_registretion
+# from main import render_main
+# from create_code import render_code
+# from my_codes import render_codes
+# from contacts import render_contacts
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('log/', render_authorization, name='authorization'),
+    path('reg/', render_registretion, name='registration')
+    # path('', admin.site.urls),
+    # path('', render_main, name='main'),
+    # path('', render_code, name='create_code'),
+    # path('', render_codes, name='my_codes'),
+    # path('', render_contacts, name='contacts')
 ]
