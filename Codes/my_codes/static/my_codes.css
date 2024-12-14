@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Instrument Sans";
+    color: #17153B;
+}
+header input{
+    width: 70%;
+    height: 50px;
+}
+header .triangle{
+    width: 20%;
+    height: 100px;
+}
+main .codes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5% 20% 5% 20%;
+    align-items: center;
+    gap: 50px;
+}
+.codes .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    width: 300px;
+    height: 400px;
+    background-color: #C8ACD6;
+    border: 5px #433D8B solid;
+    border-radius: 10px;
+}
+.card img{
+    width: 150px;
+    height: 150px;
+}
+.card .info{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 34px;
+    width: 280px;
+    height: 190px;
+}
+.info .text-info{
+    font-size: 20px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 100vw;
+    height: 100px;
+    gap: 20px;
+    background-color: #C8ACD6;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px;
+    align-items: center;
+    background-color: #17153B;
+}
+.view{
+    font-size: 40px;
+    font-weight: bold;
+    color: #C8ACD6;
+}
