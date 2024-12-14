@@ -24,9 +24,9 @@ from registration import render_registretion
 # from contacts import render_contacts
 
 urlpatterns = [
-    path('log/', render_authorization, name='authorization'),
-    path('reg/', render_registretion, name='registration')
     # path('', admin.site.urls),
+    path('log/', render_authorization, name='authorization'),
+    path('reg/', render_registretion, name='registration'),
     # path('', render_main, name='main'),
     # path('', render_code, name='create_code'),
     # path('', render_codes, name='my_codes'),

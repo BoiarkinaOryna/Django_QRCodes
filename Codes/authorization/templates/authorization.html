@@ -2,465 +2,100 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-</head>
-<body>
-    <style>
-        body {
-        font-size: 16px;
-        gap: 30px;
-        margin: 0;
-        font-family: 'Instrument Sans', sans-serif;
-        background-color: #17153b;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 200vh;
-        overflow-y: scroll;
-        flex: 1 1 200px;
-        margin: 10px;
-        padding: 0;
-        overflow-x: hidden;
-        height: 100%;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="{% static 'css/authorization.css' %}">
+    </head>
+    <body>
 
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #c8acd6;
-        width: 100%;
-        height: 102px;
-        padding: 0 108px;
-        position: relative;
-    }
-
-    .logo {
-        width: 70px;
-        height: 70px;
-        background-image: url('image.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: absolute;
-        margin-left: 200px;
-        
-    }
-
-    .search-input {
-        width: 700px;
-        height: 50px;
-        background-color: #433D8B;
-        border-radius: 10px;
-        border: 2px solid #000000;
-        padding: 0.5px;
-        margin-left: 350px;
-        position: relative;
-    }
-
-    .vector-bg {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 368px;
-        height: 102px;
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1vhoq_uyZiCJNZk');
-        background-size: cover;
-        background-repeat: no-repeat;
-        }
-
-
-    .login-window {
-        width: 680px;
-        min-height: 599px;
-        background: #c8acd6;
-        border-radius: 24px;
-        border: 5px solid #433d8b;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        box-sizing: border-box;
-    }
-    
-    .options-bar {
-        width: 500px;
-        height: 60px;
-        display: flex;
-        border-radius: 15px;
-        border: 5px solid #17153b;
-        margin-top: 10px;
-    }
-
-    .options {
-        width: 500px;
-        height: 60px;
-        display: flex;
-        border-radius: 15px;
-        border: 5px solid #17153b;
-        overflow: hidden;
-    }
-
-    .sign-in, .login-tab {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .sign-in {
-        background: #17153b;
-    }
-
-    .sign-in span {
-        color: white;
-    }
-
-    .login-tab {
-        background: white;
-    }
-
-    .login-tab span {
-        color: #17153b;
-    }
-
-    .sign-in span, .login-tab span {
-        font-size: 30px;
-        font-weight: 400;
-        text-transform: lowercase;
-    }
-
-    .title {
-        font-size: 40px;
-        font-weight: 400;
-        color: #3b1515;
-        margin: 0;
-    }
-
-    .google-login {
-        width: 500px;
-        height: 52px;
-        background: white;
-        border-radius: 15px;
-        border: 5px solid #17153b;
-        display: flex;
-        align-items: center;
-        padding: 4px 84px;
-        gap: 50px;
-        cursor: pointer;
-        box-sizing: border-box;
-    }
-
-    .google-icon {
-        width: 40px;
-        height: 40px;
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1vhp6_uyZiCJNZl');
-        background-size: cover;
-        margin-left: -25px;
-        }
-
-    .google-login span {
-        font-size: 30px;
-        font-weight: 400;
-        color: #17153b;
-        white-space: nowrap;
-    }
-
-    .divider {
-        width: 500px;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 62px;
-        margin: 10px 0;
-    }
-
-    .line {
-        width: 164px;
-        height: 1px;
-        background: #17153b;
-        border: none;
-        margin: 0;
-    }
-
-    .divider span {
-        font-size: 30px;
-        font-weight: 400;
-        color: #17153b;
-    }
-
-    .login-form {
-        width: 430px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .name-fields {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    .input-group {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    .name-fields .input-group {
-        width: 200px;
-    }
-
-    .input-group label {
-        font-size: 20px;
-        /* font-weight: 400; */
-        color: #17153b;
-    }
-
-    .input-group input {
-        width: 100%;
-        height: 40px;
-        border-radius: 15px;
-        border: 5px solid #17153b;
-        background: white;
-        padding: 5px 15px;
-        font-size: 16px;
-        box-sizing: border-box;
-    }
-
-    .input-group input:focus {
-        outline: none;
-        border-color: #433d8b;
-    }
-
-    .email {
-        width: 100%;
-    }
-
-    .login-button {
-        width: 100%;
-        height: 54px;
-        background: #444444;
-        border-radius: 15px;
-        border: 5px solid #17153b;
-        color: white;
-        font-size: 20px;
-        font-weight: 400;
-        cursor: pointer;
-        transition: background-color 0.2s;
-    }
-
-    .login-button:hover {
-        background: #333333;
-    }
-
-    .footer {
-        background-color: #2e236c;
-        width: 100%;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .vector-left {
-        width: 340px;
-        height: 400px;
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1rreGqZFj75e6ie');
-        background-size: cover;
-    }
-
-    .content {
-        width: 600px;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .qr-logo {
-        width: 150px;
-        height: 150px;
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1rremqZFj75e6if');
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
-    .links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .link {
-        font-weight: 700;
-        font-size: 20px;
-        color: #c8acd6;
-        text-decoration: none;
-    }
-
-    .social-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .social-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .social-icon {
-        width: 50px;
-        height: 50px;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-
-    .instagram-icon {
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1rrgmqZFj75e6ig');
-    }
-
-    .telegram-icon {
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1rrg2qZFj75e6ih');
-    }
-
-    .viber-icon {
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1rrg2qZFj75e6ii');
-    }
-
-    .vector-right {
-        width: 340px;
-        height: 400px;
-        background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1rrhGqZFj75e6ij');
-        background-size: cover;
-    }
-
-        @media screen and (max-width: 768px) {
-        body {
-            font-size: 14px;
-            
-        }
-
-        .container {
-            width: 100%;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        body {
-            font-size: 12px;
-            
-        }
-
-        .container {
-            padding: 10px;
-        }
-    }
-
-    </style>
-
-
-    
-    <div class="header">
-        <div class="logo">
-            <img src="{static 'image.png'}" width="70" height="70" alt="Logo">
-        </div>
-        <input type="text" class="search-input" placeholder="Search...">
-        <div class="vector-bg"></div>
-    </div>
-
-    <div class="login-window">
-        <div class="options">
-            <div class="sign-in">
-                <span>sign in</span>
+        <div class="header">
+            <div class="logo">
+                <img src="{static 'images/logo.png'}" width="70" height="70" alt="Logo">
             </div>
-            <div class="login-tab">
-                <span>log in</span>
-            </div>
+            <input type="text" class="search-input" placeholder="Search...">
+            <div class="vector-bg"></div>
         </div>
-        
-        <h1 class="title">Log in</h1>
-        
-        <div class="google-login">
-            <div class="google-icon"></div>
-            <span class="google-text">Log in with Google</span>
-        </div>
-    
-        <div class="divider">
-            <hr class="line"/>
-            <span>OR</span>
-            <hr class="line"/>
-        </div>
-    
-        <form class="login-form">
-            <div class="name-fields">
-                <div class="input-group">
-                    <label>First name</label>
-                    <input type="text" placeholder="Ivan"/>
+
+        <div class="login-window">
+            <div class="options">
+                <div class="sign-in">
+                    <span>sign in</span>
                 </div>
-                <div class="input-group">
-                    <label>Last name</label>
-                    <input type="text" placeholder="Ivanov"/>
+                <div class="login-tab">
+                    <span>log in</span>
                 </div>
             </div>
             
-            <div class="input-group email">
-                <label>Email address</label>
-                <input type="email" placeholder="ivan.ivanov@example.com"/>
+            <h1 class="title">Log in</h1>
+            
+            <div class="google-login">
+                <div class="google-icon"></div>
+                <span class="google-text">Log in with Google</span>
             </div>
-    
-            <button type="submit" class="login-button">
-                Log in
-            </button>
-        </form>
-    </div>
-
-    <div class="footer">
-        <div class="vector-left"></div>
         
-        <div class="content">
-            <div class="qr-logo"></div>
-            
-            <div class="links">
-                <a href="#" class="link">Buy a membership</a>
-                <a href="#" class="link">Register</a>
-                <a href="#" class="link">Log in</a>
-                <a href="#" class="link">Create a QRCode</a>
-                <a href="#" class="link">See my QRCodes</a>
-                <a href="#" class="link">Write a review</a>
+            <div class="divider">
+                <hr class="line"/>
+                <span>OR</span>
+                <hr class="line"/>
             </div>
-            
-            <div class="social-links">
-                <div class="social-item">
-                    <div class="social-icon instagram-icon"></div>
-                    <a href="#" class="link">Instagram</a>
+        
+            <form class="login-form">
+                <div class="name-fields">
+                    <div class="input-group">
+                        <label>First name</label>
+                        <input type="text" placeholder="Ivan"/>
+                    </div>
+                    <div class="input-group">
+                        <label>Last name</label>
+                        <input type="text" placeholder="Ivanov"/>
+                    </div>
                 </div>
-                <div class="social-item">
-                    <div class="social-icon telegram-icon"></div>
-                    <a href="#" class="link">Telegram</a>
+                
+                <div class="input-group email">
+                    <label>Email address</label>
+                    <input type="email" placeholder="ivan.ivanov@example.com"/>
                 </div>
-                <div class="social-item">
-                    <div class="social-icon viber-icon"></div>
-                    <a href="#" class="link">Viber</a>
-                </div>
-            </div>
+        
+                <button type="submit" class="login-button">
+                    Log in
+                </button>
+            </form>
         </div>
-        
-        <div class="vector-right"></div>
-    </div>
-</body>
+
+        <div class="footer">
+            <div class="vector-left"></div>
+            
+            <div class="content">
+                <div class="qr-logo"></div>
+                
+                <div class="links">
+                    <a href="#" class="link">Buy a membership</a>
+                    <a href="#" class="link">Register</a>
+                    <a href="#" class="link">Log in</a>
+                    <a href="#" class="link">Create a QRCode</a>
+                    <a href="#" class="link">See my QRCodes</a>
+                    <a href="#" class="link">Write a review</a>
+                </div>
+                
+                <div class="social-links">
+                    <div class="social-item">
+                        <div class="social-icon instagram-icon"></div>
+                        <a href="#" class="link">Instagram</a>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icon telegram-icon"></div>
+                        <a href="#" class="link">Telegram</a>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icon viber-icon"></div>
+                        <a href="#" class="link">Viber</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vector-right"></div>
+        </div>
+    </body>
 </html>
