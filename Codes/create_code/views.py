@@ -1,4 +1,8 @@
 from django.shortcuts import render
 
-def render_code(request):
-    return 'Hello world'
+# Create your views here.
+def render_create_code(request):
+    return render(
+        request = request,
+        template_name = "create_code.html"
+    )

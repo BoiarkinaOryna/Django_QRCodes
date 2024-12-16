@@ -1,0 +1,89 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/create_code.css' %}">
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
+            <input type="text" class="search-input" placeholder="Search">
+            <div class="vector-bg"></div>
+        </header>
+        <main>
+            <div class="details">
+                <span class="info">
+                    <p>Name your code</p>
+                    <input type="text">
+                </span>
+                <span class="info">
+                    <p>URL</p>
+                    <input type="text">
+                </span>
+                <span class="info">
+                    <p>Change the color</p>
+                    <div class="colors">
+                        <div style="background-color: #000000;" class="color"></div>
+                        <div style="background-color: #9747FF;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                        <div style="background-color: #00D9FF;" class="color"></div>
+                        <div style="background-color: #59FF00;" class="color"></div>
+                        <div style="background-color: #FFF600;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                    </div>
+                </span>
+                <span class="info">
+                    <p>Write a description</p>
+                    <input type="text">
+                </span>
+            </div>
+            <div class="code">
+                <img class="qrcode" src="{% static 'images/pixel-frame.png' %}" alt="pipel-code">
+                <button>
+                    Download
+                    <img class="load-img" src="{% static 'images/load.png' %}" alt="">
+                </button>
+            </div>
+        </main>
+        <footer>
+            <div class="vector-left"></div>
+            
+            <div class="content">
+                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
+                
+                <div class="links">
+                    <a href="" class="link">Buy a membership</a>
+                    <a href="" class="link">Register</a>
+                    <a href="" class="link">Log in</a>
+                    <a href="" class="link">Create a QRCode</a>
+                    <a href="" class="link">See my QRCodes</a>
+                    <a href="" class="link">Write a review</a>
+                </div>
+                
+                <div class="social-links">
+                    <div class="social-item">
+                        <!-- <div class="social-icon instagram-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
+                        <a href="" class="link">Instagram</a>
+                    </div>
+                    <div class="social-item">
+                        <!-- <div class="social-icon telegram-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
+                        <a href="" class="link">Telegram</a>
+                    </div>
+                    <div class="social-item">
+                        <!-- <div class="social-icon viber-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
+                        <a href="" class="link">Viber</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vector-right"></div>
+        </footer>
+    </body>
+</html>

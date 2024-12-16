@@ -18,17 +18,17 @@ from django.contrib import admin
 from django.urls import path
 from authorization import render_authorization
 from registration import render_registretion
-# from main import render_main
-# from create_code import render_code
-# from my_codes import render_codes
-# from contacts import render_contacts
+from main import render_main
+from contacts import render_contacts
+from my_codes import render_my_codes_page
+from create_code import render_create_code
 
 urlpatterns = [
     # path('', admin.site.urls),
-    path('log/', render_authorization, name='authorization'),
+    path('', render_main, name='main'),
+    path('auth/', render_authorization, name='authorization'),
     path('reg/', render_registretion, name='registration'),
-    # path('', render_main, name='main'),
-    # path('', render_code, name='create_code'),
-    # path('', render_codes, name='my_codes'),
-    # path('', render_contacts, name='contacts')
+    path('contacts/', render_contacts, name='contacts'),
+    path('my_codes/', render_my_codes_page, name = "my_codes"),
+    path('create_code/', render_create_code, name = "create_code")
 ]

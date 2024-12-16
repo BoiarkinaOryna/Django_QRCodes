@@ -1,1 +1,1 @@
-from .views import render_code
+from .views import render_create_code
