@@ -1,0 +1,102 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href = "{% static 'main.css' %} ">
+    </head>
+    <body>
+        <header class = "header">
+            <nav>
+                <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
+            </nav>
+            <input type="text" class="search">
+            <div class="triangle"></div>
+        </header>
+    </div>
+        <main>
+            <div class = "cards">
+                <span>
+                    <div class = "card-header">
+                        <h1>Lite</h1>
+                    </div>
+                    <p class = "description">Робіть більше за допомогою 
+                        своїх QR-кодів за допомогою
+                        форм і цільових сторінок.</p>
+                        <h1 class = "lite"> $15
+                            USD/місяць</h1>
+                            <div class = "button">
+                                <h1>Купити</h1>
+                            </div> 
+                </span>
+                <span>
+                    <div class = "card-header">
+                        <h1>Pro</h1>
+                    </div>
+                    <p class = "description">Розумні QR-коди з 
+                        розширеною
+                        сегментацією аудиторії.</p>
+                        <h2 class = "pro"> $49
+                            USD/місяць</h2>
+                            <div class = "button">
+                                <h1>Купити</h1>
+                            </div> 
+                </span>  
+                <span>
+                    <div class = "card-header">
+                        <h1>Plus</h1>
+                    </div>
+                    <p class = "description">Співпрацюйте зі своєю
+                        командою,щоб керувати та 
+                    відстежувати QR-коди.</p>
+                    <h3 class = "plus"> $99
+                        USD/місяць</h3> 
+                        <div class = "button">
+                            <h1>Купити</h1>
+                        </div>
+                </span>  
+            </div>     
+            <div class = "generate">
+                <h1>Згенерувати</h1>
+            </div>           
+        </main>
+        <footer>
+            <div class="vector-left"></div>
+            
+            <div class="content">
+                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
+                
+                <div class="links">
+                    <a href="" class="link">Buy a membership</a>
+                    <a href="" class="link">Register</a>
+                    <a href="" class="link">Log in</a>
+                    <a href="" class="link">Create a QRCode</a>
+                    <a href="" class="link">See my QRCodes</a>
+                    <a href="" class="link">Write a review</a>
+                </div>
+                
+                <div class="social-links">
+                    <div class="social-item">
+                        <!-- <div class="social-icon instagram-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
+                        <a href="" class="link">Instagram</a>
+                    </div>
+                    <div class="social-item">
+                        <!-- <div class="social-icon telegram-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
+                        <a href="" class="link">Telegram</a>
+                    </div>
+                    <div class="social-item">
+                        <!-- <div class="social-icon viber-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
+                        <a href="" class="link">Viber</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vector-right"></div>
+        </footer>
+    </body>
+</html>
+            

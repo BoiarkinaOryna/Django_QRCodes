@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+.header input{
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(68, 61, 139, 1);
+    border: 5px solid rgba(23, 21, 59, 1);
+    border-radius: 10px;
+}
+.header .triangle{
+    width: 368px;
+    height: 100px;
+    background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1vhoq_uyZiCJNZk');
+}
+body{
+    background-color: rgba(23, 21, 59, 1);
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    width: 100vw;
+    height: 100px;
+    gap: 20px;
+    background-color: #C8ACD6;
+}
+.logo{
+    width: 70px;
+    height: 70px;
+    border: 5px dashed #17153B;
+    border-radius: 50px;
+}
+.card-header{
+    display: flex;
+    justify-content: center;
+    text-decoration-color: rgba(23, 21, 59, 1);
+    border: 5px solid rgba(23, 21, 59, 1);
+    /* position: relative; */
+    color: white;
+    bottom: 50px;
+    left: 45px;
+    background-color: rgba(68, 61, 139, 1);
+    width: 153px;
+    height: 52px;
+    border-radius: 10px;
+}
+.description{
+    /* position: relative; */
+    bottom: 40px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 100px;
+    /* width: 100vw; */
+    /* height: 450px; */
+}
+.cards span{
+    /* position: relative; */
+    bottom: 15px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 40px;
+    font-size: 24px;
+    width: 280px;
+    height:  402px;
+    background-color: rgba(200, 172, 214, 1);
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    border: 5px solid rgba(67, 61, 139, 1);
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: space-between;
+}
+.cards{
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    flex-direction: row;
+}
+.lite{
+    /* position: relative; */
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(23, 21, 59, 1)
+}
+.button{
+    display: flex;
+    justify-content: center;
+    /* position: relative; */
+    width: 164px;
+    height: 37px;
+    left: 30px;
+    border-radius: 10px;
+    font-size: 5px;
+    top: 40px;
+    background-color: rgba(68, 61, 139, 1);
+    border: 5px solid rgba(23, 21, 59, 1);
+}
+.pro{
+    /* position: relative; */
+    top: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(23, 21, 59, 1)
+}
+.plus{
+    /* position: relative; */
+    top: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(23, 21, 59, 1)
+}
+.button h1{
+    border-color: 3px solid rgba(23, 21, 59, 1);
+    color: white;
+    /* position: relative; */
+    bottom: 2px;
+    font-size: 24px;
+}
+
+.generate{
+    display: flex;
+    /* position: relative; */
+    /* left: 305px; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* top: 20px; */
+    background-color: rgba(68, 61, 139, 1);
+    color: white;
+    border-radius: 15px;
+    border: 5px solid rgba(200, 172, 214, 1);
+    width: 332px;
+    height: 72px;
+}
+.generate h1{
+    /* position: relative; */
+    top: 10px;
+}
+footer {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background: #2e236c;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vector-left, .vector-right {
+    width: 340px;
+    height: 400px;
+}
+
+.vector-left {
+    background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1wCIK_uyZiCJNaX');
+}
+
+.vector-right {
+    background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1wCIK_uyZiCJNaY');
+}
+
+.content {
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.qr-logo {
+    width: 150px;
+    height: 150px;
+    border: 5px dashed #17153B;
+    border-radius: 50px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.link {
+    font-weight: 700;
+    font-size: 20px;
+    color: #c8acd6;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

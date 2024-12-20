@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href = "{% static 'contacts.css' %} ">
+    </head>
+    <body>
+        <header class = "header">
+            <nav>
+                <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
+            </nav>
+            <input type="text" class="search">
+            <div class="triangle"></div>
+        </header>
+        <main>
+            <span>
+                <div class = "box">
+                    <p1>Форма зворотнього зв’язку</p1>
+                    <p>Ім’я та прізвище*</p>
+                    <input class = "input" type = "">
+                    <p>Адреса електронної пошти*</p>
+                    <input class = "input" type="">
+                    <p>Тема*</p>
+                    <input class = "input" type="">
+                    <p5>Питання/консультація*</p5>
+                    <input class = "input2" type="">
+                    <div class = "send">
+                        <h1>Надіслати</h1>
+                    </div>
+                </div>
+            </span>
+        </main>
+        <footer>
+            <div class="vector-left"></div>
+            
+            <div class="content">
+                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
+                
+                <div class="links">
+                    <a href="" class="link">Buy a membership</a>
+                    <a href="" class="link">Register</a>
+                    <a href="" class="link">Log in</a>
+                    <a href="" class="link">Create a QRCode</a>
+                    <a href="" class="link">See my QRCodes</a>
+                    <a href="" class="link">Write a review</a>
+                </div>
+                
+                <div class="social-links">
+                    <div class="social-item">
+                        <!-- <div class="social-icon instagram-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
+                        <a href="" class="link">Instagram</a>
+                    </div>
+                    <div class="social-item">
+                        <!-- <div class="social-icon telegram-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
+                        <a href="" class="link">Telegram</a>
+                    </div>
+                    <div class="social-item">
+                        <!-- <div class="social-icon viber-icon"></div> -->
+                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
+                        <a href="" class="link">Viber</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vector-right"></div>
+        </footer>
+    </body>
+</html>

@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'create_code',
-    'my_codes',
-    'authorization',
-    'registration',
+    # 'create_code',
+    # 'my_codes',
+    # 'authorization',
+    # 'registration',
     'contacts'
 ]
 
