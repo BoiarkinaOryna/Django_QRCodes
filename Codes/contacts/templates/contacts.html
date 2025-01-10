@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href = "{% static 'contacts.css' %} ">
+        <link rel="stylesheet" href = "{% static 'css/contacts.css' %} ">
     </head>
     <body>
         <header class = "header">
@@ -12,19 +12,19 @@
                 <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
             </nav>
             <input type="text" class="search">
-            <div class="triangle"></div>
+            <img class="triangle" src="{% static 'images/vector.png' %}" alt="">
         </header>
         <main>
             <span>
                 <div class = "box">
-                    <p1>Форма зворотнього зв’язку</p1>
+                    <h2>Форма зворотнього зв’язку</h2>
                     <p>Ім’я та прізвище*</p>
                     <input class = "input" type = "">
                     <p>Адреса електронної пошти*</p>
                     <input class = "input" type="">
                     <p>Тема*</p>
                     <input class = "input" type="">
-                    <p5>Питання/консультація*</p5>
+                    <p>Питання/консультація*</p>
                     <input class = "input2" type="">
                     <div class = "send">
                         <h1>Надіслати</h1>
@@ -33,7 +33,7 @@
             </span>
         </main>
         <footer>
-            <div class="vector-left"></div>
+            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
             
             <div class="content">
                 <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             
-            <div class="vector-right"></div>
+            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
         </footer>
     </body>
 </html>

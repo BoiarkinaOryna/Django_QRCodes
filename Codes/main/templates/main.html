@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href = "{% static 'main.css' %} ">
+        <link rel="stylesheet" href = "{% static 'css/main.css' %} ">
     </head>
     <body>
         <header class = "header">
@@ -12,7 +12,7 @@
                 <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
             </nav>
             <input type="text" class="search">
-            <div class="triangle"></div>
+            <img class="triangle" src="{% static 'images/vector.png' %}" alt="">
         </header>
     </div>
         <main>
@@ -62,7 +62,7 @@
             </div>           
         </main>
         <footer>
-            <div class="vector-left"></div>
+            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
             
             <div class="content">
                 <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
@@ -95,7 +95,7 @@
                 </div>
             </div>
             
-            <div class="vector-right"></div>
+            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
         </footer>
     </body>
 </html>

@@ -5,13 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Codes</title>
-        <link rel="stylesheet" href="{% static 'my_codes.css' %}">
+        <link rel="stylesheet" href="{% static 'css/my_codes.css' %}">
     </head>
     <body>
         <header>
             <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
             <input type="text" class="search-input" placeholder="Search">
-            <div class="vector-bg"></div>
+            <img class="vector-bg" src="{% static 'images/vector.png' %}" alt="">
         </header>
         <main>
             <h1 class="view">View my codes</h1>
@@ -37,7 +37,7 @@
             </div>
         </main>
         <footer>
-            <div class="vector-left"></div>
+            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
             
             <div class="content">
                 <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
@@ -53,24 +53,21 @@
                 
                 <div class="social-links">
                     <div class="social-item">
-                        <!-- <div class="social-icon instagram-icon"></div> -->
                         <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
                         <a href="" class="link">Instagram</a>
                     </div>
                     <div class="social-item">
-                        <!-- <div class="social-icon telegram-icon"></div> -->
                         <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
                         <a href="" class="link">Telegram</a>
                     </div>
                     <div class="social-item">
-                        <!-- <div class="social-icon viber-icon"></div> -->
                         <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
                         <a href="" class="link">Viber</a>
                     </div>
                 </div>
             </div>
             
-            <div class="vector-right"></div>
+            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
         </footer>
     </body>
 </html>

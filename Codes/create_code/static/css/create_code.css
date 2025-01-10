@@ -79,14 +79,14 @@ main .code{
 .vector-bg {
     width: 368px;
     height: 100px;
-    background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1vhoq_uyZiCJNZk');
+    transform: scale(-1, 1);
 }
 header{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    width: 100vw;
+    width: 100%;
     height: 100px;
     gap: 10%;
     background-color: #C8ACD6;
@@ -113,7 +113,7 @@ footer {
     display: flex;
     width: 100%;
     height: 400px;
-    background: #2e236c;
+    background-color: #17153B;
     justify-content: space-between;
     align-items: center;
 }
@@ -124,11 +124,11 @@ footer {
 }
 
 .vector-left {
-    background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1wCIK_uyZiCJNaX');
+    transform: scale(1, -1);
 }
 
 .vector-right {
-    background-image: url('https://dashboard.codeparrot.ai/api/assets/Z1wCIK_uyZiCJNaY');
+    transform: scale(-1, -1);
 }
 
 .content {
@@ -143,7 +143,7 @@ footer {
 .qr-logo {
     width: 150px;
     height: 150px;
-    border: 5px dashed #17153B;
+    border: 5px dashed #433D8B;
     border-radius: 50px;
 }
 
