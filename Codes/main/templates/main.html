@@ -1,102 +1,62 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href = "{% static 'css/main.css' %} ">
-    </head>
-    <body>
-        <header class = "header">
-            <nav>
-                <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
-            </nav>
-            <input type="text" class="search">
-            <img class="triangle" src="{% static 'images/vector.png' %}" alt="">
-        </header>
-    </div>
-        <main>
-            <div class = "cards">
-                <span>
-                    <div class = "card-header">
-                        <h1>Lite</h1>
-                    </div>
-                    <p class = "description">Робіть більше за допомогою 
-                        своїх QR-кодів за допомогою
-                        форм і цільових сторінок.</p>
-                        <h1 class = "lite"> $15
-                            USD/місяць</h1>
-                            <div class = "button">
-                                <h1>Купити</h1>
-                            </div> 
-                </span>
-                <span>
-                    <div class = "card-header">
-                        <h1>Pro</h1>
-                    </div>
-                    <p class = "description">Розумні QR-коди з 
-                        розширеною
-                        сегментацією аудиторії.</p>
-                        <h2 class = "pro"> $49
-                            USD/місяць</h2>
-                            <div class = "button">
-                                <h1>Купити</h1>
-                            </div> 
-                </span>  
-                <span>
-                    <div class = "card-header">
-                        <h1>Plus</h1>
-                    </div>
-                    <p class = "description">Співпрацюйте зі своєю
-                        командою,щоб керувати та 
-                    відстежувати QR-коди.</p>
-                    <h3 class = "plus"> $99
-                        USD/місяць</h3> 
+
+{% block title %}
+    Main
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href = "{% static 'css/main.css' %} ">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class = "cards">
+            <span>
+                <div class = "card-header">
+                    <h1>Free</h1>
+                </div>
+                <p class = "description">Можна створити один QR-код на 6-ть місяців.</p>
+                    <h1 class = "lite">$0
+                        USD/місяць</h1>
+                        <div class = "button">
+                            <h1>Безкоштовно</h1>
+                        </div> 
+            </span>
+            <span>
+                <div class = "card-header">
+                    <h1>Standart</h1>
+                </div>
+                <p class = "description">Можна створити 10 кастомізованих QR-кодів.</p>
+                    <h2 class = "pro"> $2
+                        USD/місяць</h2>
                         <div class = "button">
                             <h1>Купити</h1>
-                        </div>
-                </span>  
-            </div>     
-            <div class = "generate">
-                <h1>Згенерувати</h1>
-            </div>           
-        </main>
-        <footer>
-            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
-            
-            <div class="content">
-                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
-                
-                <div class="links">
-                    <a href="" class="link">Buy a membership</a>
-                    <a href="" class="link">Register</a>
-                    <a href="" class="link">Log in</a>
-                    <a href="" class="link">Create a QRCode</a>
-                    <a href="" class="link">See my QRCodes</a>
-                    <a href="" class="link">Write a review</a>
+                        </div> 
+            </span>  
+            <span>
+                <div class = "card-header">
+                    <h1>Pro</h1>
                 </div>
-                
-                <div class="social-links">
-                    <div class="social-item">
-                        <!-- <div class="social-icon instagram-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
-                        <a href="" class="link">Instagram</a>
+                <p class = "description">Можна створити до 100 QR-кодів</p>
+                <h3 class = "plus"> $10
+                    USD/місяць</h3> 
+                    <div class = "button">
+                        <h1>Купити</h1>
                     </div>
-                    <div class="social-item">
-                        <!-- <div class="social-icon telegram-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
-                        <a href="" class="link">Telegram</a>
-                    </div>
-                    <div class="social-item">
-                        <!-- <div class="social-icon viber-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
-                        <a href="" class="link">Viber</a>
-                    </div>
-                </div>
-            </div>
-            
-            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
-        </footer>
-    </body>
-</html>
-            
+            </span>  
+        </div>
+        <div class = 'instruction'>
+            <h2 class = "head-i">Щоб згенерувати свій QR-код треба:</h2>
+            <p class = "rules-i">1.На головній сторінці за змовчуванням стоїть безкоштовна підписка, якщо ви хочете більше можливостей то оформіть підписку за певну суму. <br>
+            2.Після того як ви вирішили, що вибрати натискаєте кнопку "Згенерувати". <br>
+            3.Після натиснення вас перекидує на сторінку створення самого QR-коду, де ви задаєте ім'я, опис, колір та url вашому коду. <br>
+            4.Після закінчення ви повинні натиснути кнопку "Download". <br>
+            </p>
+        </div>     
+        <div class = "generate">
+            <a href="{% url 'create_code' %}">Згенерувати</a>
+        </div>           
+    </main>
+{% endblock %}

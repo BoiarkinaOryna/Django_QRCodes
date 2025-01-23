@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "IrpinType";
+    src: url(../font/IrpinType-Regular.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IrpinType";
+    color: #17153B;
+}
+
+body{
+    background-color: #17153B;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    height: 100px;
+    gap: 5%;
+    background-color: #C8ACD6;
+}
+.logo {
+    width: 90px;
+    height: 90px;
+    border: 5px dashed #17153B;
+    border-radius: 50px;
+}
+
+.search-input {
+    width: 700px;
+    height: 50px;
+    background-color: #433D8B;
+    border-radius: 10px;
+    border: 5px solid #17153B;
+}
+.vector{
+    position: relative;
+}
+.vector div{
+    position: absolute;
+    left: 300px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+}
+.vector div p{
+    position: relative;
+    right: 8px;
+}
+.vector div a{
+    display: block;
+    position: relative;
+    left: -10px;
+    top: -10px;
+    width: 60px;
+    height: 60px;
+}
+.vector div a img{
+    position: relative;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+}
+.vector-bg {
+    width: 368px;
+    height: 100px;
+    transform: scale(-1, 1);
+}
+footer {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #17153B;
+    gap: 50px;
+}
+
+.vector-left, .vector-right {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    bottom: 0;
+}
+
+.vector-left {
+    transform: scale(1, -1);
+}
+
+.vector-right {
+    transform: scale(-1, -1);
+}
+
+.content {
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.qr-logo {
+    width: 150px;
+    height: 150px;
+    border: 5px dashed #433D8B;
+    border-radius: 50px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+}
+
+.link {
+    font-weight: 700;
+    font-size: 20px;
+    color: #433D8B;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

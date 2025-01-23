@@ -1,73 +1,37 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Codes</title>
-        <link rel="stylesheet" href="{% static 'css/my_codes.css' %}">
-    </head>
-    <body>
-        <header>
-            <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
-            <input type="text" class="search-input" placeholder="Search">
-            <img class="vector-bg" src="{% static 'images/vector.png' %}" alt="">
-        </header>
-        <main>
-            <h1 class="view">View my codes</h1>
-            <div class="codes">
-                <div class="card">
-                    <img src="{% static 'images/pixel-frame.png' %}" alt="code-image">
-                    <div class="info">
-                        <p class="text-info">Code name: text</p>
-                        <p class="text-info">Code color: text</p>
-                        <p class="text-info">Creator: text</p>
-                        <p class="text-info">Description: text</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="{% static 'images/pixel-frame.png' %}" alt="code-image">
-                    <div class="info">
-                        <p class="text-info">Code name: text</p>
-                        <p class="text-info">Code color: text</p>
-                        <p class="text-info">Creator: text</p>
-                        <p class="text-info">Description: text</p>
-                    </div>
+{% block title %}
+    My QRCodes
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href = "{% static 'css/my_codes.css' %} ">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h1 class="view">Ваші коди</h1>
+        <div class="codes">
+            <div class="card">
+                <img src="{% static 'images/pixel-frame.png' %}" alt="code-image">
+                <div class="info">
+                    <p class="text-info">Назва: text</p>
+                    <p class="text-info">Колір: text</p>
+                    <p class="text-info">Час створення: text</p>
+                    <p class="text-info">Опис: text</p>
                 </div>
             </div>
-        </main>
-        <footer>
-            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
-            
-            <div class="content">
-                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
-                
-                <div class="links">
-                    <a href="" class="link">Buy a membership</a>
-                    <a href="" class="link">Register</a>
-                    <a href="" class="link">Log in</a>
-                    <a href="" class="link">Create a QRCode</a>
-                    <a href="" class="link">See my QRCodes</a>
-                    <a href="" class="link">Write a review</a>
-                </div>
-                
-                <div class="social-links">
-                    <div class="social-item">
-                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
-                        <a href="" class="link">Instagram</a>
-                    </div>
-                    <div class="social-item">
-                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
-                        <a href="" class="link">Telegram</a>
-                    </div>
-                    <div class="social-item">
-                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
-                        <a href="" class="link">Viber</a>
-                    </div>
+            <div class="card">
+                <img src="{% static 'images/pixel-frame.png' %}" alt="code-image">
+                <div class="info">
+                    <p class="text-info">Назва: text</p>
+                    <p class="text-info">Колір: text</p>
+                    <p class="text-info">Час створення: text</p>
+                    <p class="text-info">Опис: text</p>
                 </div>
             </div>
-            
-            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
-        </footer>
-    </body>
-</html>
+        </div>
+    </main>
+{% endblock %}

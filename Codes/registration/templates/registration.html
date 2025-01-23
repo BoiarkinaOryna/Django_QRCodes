@@ -1,101 +1,77 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <title> Registration Page </title>
-        <link rel="stylesheet" href="{% static 'registration.css' %}">
-    </head>
-    <body>
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="signin-window">
+            <div class="options">
+                <div class="sign-in">
+                    <span>Зареєструватися</span>
+                </div>
+                <div class="login-tab">
+                    <a href="{% url 'authorization' %}">Авторизуватися</a>
+                </div>
+            </div>
+            
+            
+
+            <div class="divider">
+                <hr class="line"/>
+                <span>Зареєструватися</span>
+                <hr class="line"/>
+            </div>
         
-        <header>
-            <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
-            <input type="text" class="search-input" placeholder="Search">
-            <img class="vector-bg" src="{% static 'images/vector.png' %}" alt="">
-        </header>
-        <main>
-            <div class="signin-window">
-                <div class="options">
-                    <div class="sign-in">
-                        <span>sign in</span>
+            <form class="login-form" method="post">
+                <div class="name-fields">
+                    <div class="input-group">
+                        <label>Ім’я</label>
+                        {% csrf_token %}
+                        <input type="text" placeholder="Ivan" name="name">
                     </div>
-                    <div class="login-tab">
-                        <span>log in</span>
+                    <div class="input-group">
+                        <label>Прізвище</label>
+                        {% csrf_token %}
+                        <input type="text" placeholder="Ivanov" name="surname">
                     </div>
                 </div>
                 
-                <h1 class="title">Sign in</h1>
-                
-                <div class="google-login">
-                    <img class="google-icon" src="{% static 'images/google.png' %}" alt="">
-                    <span class="google-text">Sign in with Google</span>
+                <div class="input-group email">
+                    <label>Адреса електронної пошти</label>
+                    {% csrf_token %}
+                    <input type="email" placeholder="ivan.ivanov@example.com" name="email">
                 </div>
-            
-                <div class="divider">
-                    <hr class="line"/>
-                    <span>OR</span>
-                    <hr class="line"/>
+
+                <div class="input-group password">
+                    <label>Пароль</label>
+                    {% csrf_token %}
+                    <input type="password" placeholder="Enter your password" name="password">
                 </div>
-            
-                <form class="login-form">
-                    <div class="name-fields">
-                        <div class="input-group">
-                            <label>First name</label>
-                            <input type="text" placeholder="Ivan"/>
-                        </div>
-                        <div class="input-group">
-                            <label>Last name</label>
-                            <input type="text" placeholder="Ivanov"/>
-                        </div>
-                    </div>
-                    
-                    <div class="input-group email">
-                        <label>Email address</label>
-                        <input type="email" placeholder="ivan.ivanov@example.com"/>
-                    </div>
-            
-                    <button type="submit" class="login-button">
-                        Log in
-                    </button>
-                </form>
-            </div>
-        </main>
-        <footer>
-            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
-            
-            <div class="content">
-                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
-                
-                <div class="links">
-                    <a href="" class="link">Buy a membership</a>
-                    <a href="" class="link">Register</a>
-                    <a href="" class="link">Log in</a>
-                    <a href="" class="link">Create a QRCode</a>
-                    <a href="" class="link">See my QRCodes</a>
-                    <a href="" class="link">Write a review</a>
+
+                <div class="input-group confirm-password">
+                    <label>Підтвердіть пароль</label>
+                    {% csrf_token %}
+                    <input type="password" placeholder="Confirm your password" name="confirm_password">
                 </div>
-                
-                <div class="social-links">
-                    <div class="social-item">
-                        <!-- <div class="social-icon instagram-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
-                        <a href="" class="link">Instagram</a>
-                    </div>
-                    <div class="social-item">
-                        <!-- <div class="social-icon telegram-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
-                        <a href="" class="link">Telegram</a>
-                    </div>
-                    <div class="social-item">
-                        <!-- <div class="social-icon viber-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
-                        <a href="" class="link">Viber</a>
-                    </div>
-                </div>
-            </div>
-            
-            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
-        </footer>
-    </body>
-</html>
+        
+                <button type="submit" class="login-button">
+                    Підтвердити
+                </button>
+                {% if create_user_error %}
+                    <p class="error">Такий користувач вже існує. Спробуйте, будь ласка, іншу електронну адресу або авторизуйтеся.</p>
+                {% endif %}
+                {% if password_error %}
+                    <p class="error">Паролі не співпадають. Спробуйте, будь ласка, ще раз.</p>
+                {% endif %}
+            </form>
+        </div>
+    </main>
+{% endblock %}

@@ -1,58 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Instrument Sans";
+
 }
-.header input{
-    width: 60%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-}
-.header .triangle{
-    width: 368px;
-    height: 100px;
-    transform: scale(-1, 1);
-}
-body{
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(23, 21, 59, 1);
-    gap: 50px;
-}
-.logo{
-    width: 70px;
-    height: 70px;
-    border: 5px dashed #17153B;
-    border-radius: 50px;
-}
-.header{
+main{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: right;
-    /* padding: 0 10%; */
-    width: 100%;
-    height: 100px;
-    gap: 20px;
-    background-color: #C8ACD6;
+    justify-content: center;
+    gap: 200px;
 }
 .box{
     background-color: red;
     display: flex;
-    gap: 20px;
-    margin: auto;
+    gap: 30px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px;
-    /* left: 550px;
-    top: 40px; */
     background-color: rgba(200, 172, 214, 1);
-    height: 607px;
+    height: 600px;
     border: 5px solid rgba(68, 61, 139, 1);
-    width: 432px;
+    width: 430px;
     border-radius: 10px;
 }
 .box p{
@@ -68,7 +37,6 @@ body{
     position: relative;
     font-weight: bold;
     font-size: 24px;
-    left: 50px;
 }
 input{
     /* position: relative; */
@@ -92,11 +60,8 @@ input{
 .send{
     display: flex;
     justify-content: center;
-    margin: auto;
-    /* position: relative; */
-    /* left: 680px;
-    bottom: 30px; */
-    width: 150px;
+    align-items: center;
+    width: 200px;
     height: 50px;
     background-color: rgba(68, 61, 139, 1);
     border-radius: 10px;
@@ -109,70 +74,21 @@ input{
     font-size: 24px;
     text-align: center;
 }
-footer {
-    display: flex;
-    width: 100%;
-    height: 400px;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.vector-left, .vector-right {
-    width: 340px;
-    height: 400px;
-}
-.vector-left {
-    transform: scale(1, -1);
-}
-
-.vector-right {
-    transform: scale(-1, -1);
-}
-
-.content {
-    width: 600px;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.qr-logo {
-    width: 150px;
-    height: 150px;
-    border: 5px dashed #433D8B;
-    border-radius: 50px;
-}
-
-.links {
+.main-social-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 50px;
     padding: 10px;
 }
 
-.link {
-    font-weight: 700;
-    font-size: 20px;
-    color: #c8acd6;
-    text-decoration: none;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-}
-
-.social-item {
+.main-social-item {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.social-icon {
+.main-social-icon {
     width: 50px;
     height: 50px;
     background-size: contain;

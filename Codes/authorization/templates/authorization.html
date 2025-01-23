@@ -1,100 +1,55 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-        <link rel="stylesheet" href="{% static 'authorization.css' %}">
-    </head>
-    <body>
-        <header>
-            <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo">
-            <input type="text" class="search-input" placeholder="Search">
-            <img class="vector-bg" src="{% static 'images/vector.png' %}" alt="">
-        </header>
-        <main>
-            <div class="login-window">
-                <div class="options">
-                    <div class="sign-in">
-                        <span>sign in</span>
-                    </div>
-                    <div class="login-tab">
-                        <span>log in</span>
-                    </div>
+{% block title %}
+    Authorization
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/authorization.css' %}">
+     <!-- <link rel="stylesheet" href="../static/css/authorization.css"> -->
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="login-window">
+            <div class="options">
+                <div class="sign-in">
+                    <a href="{% url 'registration' %}">Зареєструватися</a>
                 </div>
-                
-                <h1 class="title">Log in</h1>
-                
-                <div class="google-login">
-                    <img class="google-icon" src="{% static 'images/google.png' %}" alt="">
-                    <span class="google-text">Log in with Google</span>
-                </div>
-            
-                <div class="divider">
-                    <hr class="line"/>
-                    <span>OR</span>
-                    <hr class="line"/>
-                </div>
-            
-                <form class="login-form">
-                    <div class="name-fields">
-                        <div class="input-group">
-                            <label>First name</label>
-                            <input type="text" placeholder="Ivan"/>
-                        </div>
-                        <div class="input-group">
-                            <label>Last name</label>
-                            <input type="text" placeholder="Ivanov"/>
-                        </div>
-                    </div>
-                    
-                    <div class="input-group email">
-                        <label>Email address</label>
-                        <input type="email" placeholder="ivan.ivanov@example.com"/>
-                    </div>
-            
-                    <button type="submit" class="login-button">
-                        Log in
-                    </button>
-                </form>
-            </div>
-        </main>
-        <footer>
-            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
-            
-            <div class="content">
-                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
-                
-                <div class="links">
-                    <a href="" class="link">Buy a membership</a>
-                    <a href="" class="link">Register</a>
-                    <a href="" class="link">Log in</a>
-                    <a href="" class="link">Create a QRCode</a>
-                    <a href="" class="link">See my QRCodes</a>
-                    <a href="" class="link">Write a review</a>
-                </div>
-                
-                <div class="social-links">
-                    <div class="social-item">
-                        <!-- <div class="social-icon instagram-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
-                        <a href="" class="link">Instagram</a>
-                    </div>
-                    <div class="social-item">
-                        <!-- <div class="social-icon telegram-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
-                        <a href="" class="link">Telegram</a>
-                    </div>
-                    <div class="social-item">
-                        <!-- <div class="social-icon viber-icon"></div> -->
-                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
-                        <a href="" class="link">Viber</a>
-                    </div>
+                <div class="login-tab">
+                    <span>Авторизуватися</span>
                 </div>
             </div>
             
-            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
-        </footer>
-    </body>
-</html>
+            <div class="divider">
+                <hr class="line"/>
+                <span>Авторизуватися</span>
+                <hr class="line"/>
+            </div>
+            
+            
+            <form class="login-form">
+                <div class="input-group email">
+                    <label>Адреса електронної пошти</label>
+                    {% csrf_token %}
+                    <input type="email" placeholder="ivan.ivanov@example.com" name="email">
+                </div>
+                
+                <div class="input-group password">
+                    <label>Пароль</label>
+                    {% csrf_token %}
+                    <input type="password" placeholder="Enter your password" name="password">
+                </div>
+        
+                <button type="submit" class="login-button">
+                    Підтвердити
+                </button>
+            </form>
+            {% if fail %}
+                <p class="error">Такого користувача не існує. Спробуйте зареєструватися.</p>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

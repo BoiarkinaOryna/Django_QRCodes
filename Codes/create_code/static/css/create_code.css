@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Instrument Sans";
     color: #17153B;
 }
 main .details{
     display: flex;
     flex-direction: column;
-    padding: 10px;
     width: 60%;
     height: 400px;
 }
@@ -35,20 +32,19 @@ main .code{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 0px;
-    width: 40%;
+    width: 50%;
     height: 400px;
 }
 .code .qrcode{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .code button{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 250px;
     height: 50px;
     font-size: 20px;
     font-weight: bold;
@@ -61,40 +57,10 @@ main .code{
     width: 30px;
     height: 30px;
 }
-.logo {
-    width: 70px;
-    height: 70px;
-    border: 5px dashed #17153B;
-    border-radius: 50px;
-}
-
-.search-input {
-    width: 700px;
-    height: 50px;
-    background-color: #433D8B;
-    border-radius: 10px;
-    border: 5px solid #17153B;
-}
-
-.vector-bg {
-    width: 368px;
-    height: 100px;
-    transform: scale(-1, 1);
-}
-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: right;
-    width: 100%;
-    height: 100px;
-    gap: 10%;
-    background-color: #C8ACD6;
-}
 main{
     display: flex;
     flex-direction: row;
-    padding: 100px 200px;
+    padding: 0px 200px;
     align-items: center;
     background-color: #17153B;
 }
@@ -108,75 +74,4 @@ main{
     height: 40px;
     border: 5px solid #433D8B;
     border-radius: 30px;
-}
-footer {
-    display: flex;
-    width: 100%;
-    height: 400px;
-    background-color: #17153B;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.vector-left, .vector-right {
-    width: 340px;
-    height: 400px;
-}
-
-.vector-left {
-    transform: scale(1, -1);
-}
-
-.vector-right {
-    transform: scale(-1, -1);
-}
-
-.content {
-    width: 600px;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.qr-logo {
-    width: 150px;
-    height: 150px;
-    border: 5px dashed #433D8B;
-    border-radius: 50px;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-}
-
-.link {
-    font-weight: 700;
-    font-size: 20px;
-    color: #c8acd6;
-    text-decoration: none;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-}
-
-.social-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
