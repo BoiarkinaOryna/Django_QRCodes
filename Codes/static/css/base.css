@@ -53,7 +53,7 @@ header{
 }
 .vector div p{
     position: relative;
-    right: 8px;
+    left: -10px;
 }
 .vector div a{
     display: block;

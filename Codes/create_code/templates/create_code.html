@@ -12,14 +12,15 @@
 
 {% block content %}
     <main>
-        <div class="details">
+        <form class="details" method="POST">
+            {% csrf_token %}
             <span class="info">
                 <p>Назва</p>
-                <input type="text">
+                <input type="text" name="title">
             </span>
             <span class="info">
                 <p>URL</p>
-                <input type="text">
+                <input type="text" name="url">
             </span>
             <span class="info">
                 <p>Колір</p>
@@ -37,9 +38,12 @@
             </span>
             <span class="info">
                 <p>Опис</p>
-                <input type="text">
+                <input type="text" name = 'description'>
             </span>
-        </div>
+            <button type='submit'>
+                Оновити
+            </button>
+        </form>
         <div class="code">
             <img class="qrcode" src="{% static 'images/pixel-frame.png' %}" alt="pipel-code">
             <button>

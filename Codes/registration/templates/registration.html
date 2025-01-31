@@ -45,6 +45,12 @@
                 </div>
                 
                 <div class="input-group email">
+                    <label>Нікнейм</label>
+                    {% csrf_token %}
+                    <input type="text" placeholder="_iva_" name="username">
+                </div>
+
+                <div class="input-group email">
                     <label>Адреса електронної пошти</label>
                     {% csrf_token %}
                     <input type="email" placeholder="ivan.ivanov@example.com" name="email">
@@ -66,7 +72,7 @@
                     Підтвердити
                 </button>
                 {% if create_user_error %}
-                    <p class="error">Такий користувач вже існує. Спробуйте, будь ласка, іншу електронну адресу або авторизуйтеся.</p>
+                    <p class="error">Виникла помилка під час реєстрації. Спробуйте, будь ласка, ввести іншу електронну адресу або авторизуватися.</p>
                 {% endif %}
                 {% if password_error %}
                     <p class="error">Паролі не співпадають. Спробуйте, будь ласка, ще раз.</p>

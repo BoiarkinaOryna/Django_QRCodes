@@ -8,6 +8,7 @@ def render_registretion(request):
     create_user_error = False
     print("registration start", "\n", "request.method =", request.method)
     if request.method == "POST":
+        username = request.POST.get('username')
         name = request.POST.get('name')
         surname = request.POST.get('surname')
         email = request.POST.get('email')
@@ -15,25 +16,17 @@ def render_registretion(request):
         confirm_password = request.POST.get('confirm_password')
         
         if password == confirm_password:
-            try:
-                user = User.objects.create_user(
-                    username=email,
+            # try:
+                User.objects.create_user(
+                    username=username,
                     email=email,
                     password=password,
                     first_name=name,
                     last_name=surname
                 )
-                # user = MyUser.objects.create_user(
-                #     first_name = name,
-                #     second_name = surname,
-                #     email = email,
-                #     password = password
-                # )
-
-                user.save()
-            except:
-                create_user_error = True
-            return redirect('authorization')
+                return redirect('authorization')
+            # except:
+            #     create_user_error = True
         else:
             password_error = True
         # if password != confirm_password:

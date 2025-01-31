@@ -16,19 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from authorization import render_authorization
-from registration import render_registretion
-from main import render_main
-from contacts import render_contacts
-from my_codes import render_my_codes_page
-from create_code import render_create_code
+from authorization.views import render_authorization
+from registration.views import render_registretion
+from main.views import render_main
+from contacts.views import render_contacts
+from my_codes.views import render_my_codes_page
+from create_code.views import render_create_code
+from . import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', render_main, name='main'),
-    path('auth/', include("authorization.urls"), name='authorization'),
+    path('auth/', include("authorization.urls")),
     path('reg/', render_registretion, name='registration'),
     path('contacts/', render_contacts, name='contacts'),
     path('my_codes/', render_my_codes_page, name = "my_codes"),
     path('create_code/', render_create_code, name = "create_code")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -11,21 +11,23 @@
     <body>
         <header class = "header">
             <a href="{% url 'main' %}">
-                <img class="logo" src="{% static 'images/logo.png' %}" alt="logo">
+                <img class="logo" src="{{ MEDIA_URL }}images/logo.png" alt="logo">
             </a>
             <div class="links">
                 <a href="{% url 'main' %}" class="link">Головна</a>
                 <a href="{% url 'create_code' %}" class="link">Створити QR-код</a>
                 <a href="{% url 'my_codes' %}" class="link">Мої QR-коди</a>
                 <a href="{% url 'contacts' %}" class="link">Контакти</a>
-                <a href="{% url 'registration' %}" class="link">Зареєструватися</a>
+                {% if not authenticated %}
+                    <a href="{% url 'registration' %}" class="link">Зареєструватися</a>
+                {% endif %}
             </div>
             <div class="vector">
-                <img class="vector-bg" src="{% static 'images/vector.png' %}" alt="">
+                <img class="vector-bg" src="{{ MEDIA_URL }}images/vector.png" alt="">
                 {% if authenticated %}
                     <div>
-                        <p>logout</p>
-                        <a href="{% url 'logout' %}"><img src="{% static 'images/logout.png' %}" alt="logout"></a>
+                        <p>Вийти</p>
+                        <a href="{% url 'logout' %}"><img src="{{ MEDIA_URL }}images/logout.png" alt="logout"></a>
                     </div>
                 {% endif %}
             </div>
@@ -36,29 +38,29 @@
         {% block scripts %}
         {% endblock %}
         <footer>
-            <img class="vector-left" src="{% static 'images/vector.png' %}" alt="">
+            <img class="vector-left" src="{{ MEDIA_URL }}images/vector.png" alt="">
             
             <div class="content">
-                <img class="qr-logo" src="{% static 'images/logo.png' %}" alt="">
+                <img class="qr-logo" src="{{ MEDIA_URL }}images/logo.png" alt="">
                 
                 <div class="social-links">
                     <div class="social-item">
 
-                        <img class="social-icon" src="{% static 'images/inst.png' %}" alt="">
+                        <img class="social-icon" src="{{ MEDIA_URL }}images/inst.png" alt="">
                         <a href="" class="link">Інстаграм</a>
                     </div>
                     <div class="social-item">
-                        <img class="social-icon" src="{% static 'images/telegram.png' %}" alt="">
+                        <img class="social-icon" src="{{ MEDIA_URL }}images/telegram.png" alt="">
                         <a href="" class="link">Телеграм</a>
                     </div>
                     <div class="social-item">
-                        <img class="social-icon" src="{% static 'images/viber.png' %}" alt="">
+                        <img class="social-icon" src="{{ MEDIA_URL }}images/viber.png" alt="">
                         <a href="" class="link">Вайбер</a>
                     </div>
                 </div>
             </div>
             
-            <img class="vector-right" src="{% static 'images/vector.png' %}" alt="">
+            <img class="vector-right" src="{{ MEDIA_URL }}images/vector.png" alt="">
         </footer>
     </body>
 </html>

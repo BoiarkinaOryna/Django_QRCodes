@@ -4,13 +4,14 @@ from django.contrib.auth import authenticate, login, logout
 def render_authorization(request):
     fail = False
     if request.method == "POST":
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(
             request = request,
-            email = email,
+            username = username,
             password = password
         )
+        print("is_authenticated =", request.user.is_authenticated)
         if user:
             login(request = request, user = user)
             return redirect("main")

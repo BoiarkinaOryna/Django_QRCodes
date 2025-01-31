@@ -4,6 +4,9 @@
     box-sizing: border-box;
     color: #17153B;
 }
+input{
+    color: #C8ACD6;
+}
 main .details{
     display: flex;
     flex-direction: column;

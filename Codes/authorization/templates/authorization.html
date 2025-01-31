@@ -8,7 +8,6 @@
 
 {% block link %}
     <link rel="stylesheet" href="{% static 'css/authorization.css' %}">
-     <!-- <link rel="stylesheet" href="../static/css/authorization.css"> -->
 {% endblock %}
 
 {% block content %}
@@ -30,11 +29,11 @@
             </div>
             
             
-            <form class="login-form">
+            <form class="login-form" method="post">
                 <div class="input-group email">
-                    <label>Адреса електронної пошти</label>
+                    <label>Нікнейм</label>
                     {% csrf_token %}
-                    <input type="email" placeholder="ivan.ivanov@example.com" name="email">
+                    <input type="text" placeholder="_iva_" name="username">
                 </div>
                 
                 <div class="input-group password">
@@ -48,7 +47,7 @@
                 </button>
             </form>
             {% if fail %}
-                <p class="error">Такого користувача не існує. Спробуйте зареєструватися.</p>
+                <p class="error">Ви ввели невірний пароль або такого користувача не існує. Спробуйте зареєструватися.</p>
             {% endif %}
         </div>
     </main>
