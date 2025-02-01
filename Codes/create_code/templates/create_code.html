@@ -40,15 +40,20 @@
                 <p>Опис</p>
                 <input type="text" name = 'description'>
             </span>
-            <button type='submit'>
-                Оновити
-            </button>
+            <div class="button-container">
+                <button class="button" type='submit'>
+                    Зберегти
+                </button>
+                {% if empty_inputs_error %}
+                    <p class="error">Не вдалося зберегти qr-код. Перевірте, чи всі поли заповнені.</p>
+                {% endif %}
+            </div>
         </form>
         <div class="code">
             <img class="qrcode" src="{% static 'images/pixel-frame.png' %}" alt="pipel-code">
-            <button>
+            <button class="button">
                 Завантажити
-                <img class="load-img" src="{% static 'images/load.png' %}" alt="">
+                <img class="download-image" src="{% static 'images/load.png' %}" alt="">
             </button>
         </div>
     </main>

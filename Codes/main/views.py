@@ -6,8 +6,7 @@ def render_main(request):
         request = request,
         template_name = "main.html",
         context = {
-            'authenticated': request.user.is_authenticated,
-            'MEDIA_URL': settings.MEDIA_URL,
+            'authenticated': request.user.is_authenticated
         }
     )
 # Create your views here.

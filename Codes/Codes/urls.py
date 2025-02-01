@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from authorization.views import render_authorization
 from registration.views import render_registretion
 from main.views import render_main
 from contacts.views import render_contacts
@@ -26,7 +25,7 @@ from . import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', render_main, name='main'),
     path('auth/', include("authorization.urls")),
     path('reg/', render_registretion, name='registration'),

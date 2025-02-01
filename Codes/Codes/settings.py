@@ -125,5 +125,4 @@ STATIC_URL = str(BASE_DIR) + 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = str(BASE_DIR) +  "/media/"
-print("MEDIA_URL =", MEDIA_URL)
 MEDIA_ROOT = [BASE_DIR / "media"]

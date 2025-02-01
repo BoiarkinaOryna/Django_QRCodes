@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib import messages
 # from .models import MyUser
 
 def render_registretion(request):
@@ -16,7 +15,7 @@ def render_registretion(request):
         confirm_password = request.POST.get('confirm_password')
         
         if password == confirm_password:
-            # try:
+            try:
                 User.objects.create_user(
                     username=username,
                     email=email,
@@ -25,15 +24,10 @@ def render_registretion(request):
                     last_name=surname
                 )
                 return redirect('authorization')
-            # except:
-            #     create_user_error = True
+            except:
+                create_user_error = True
         else:
             password_error = True
-        # if password != confirm_password:
-        #     messages.error(request, 'Passwords do not match!')
-        # else:
-            
-            
         
     return render(
         request=request,
