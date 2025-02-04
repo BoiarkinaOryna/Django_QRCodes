@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    <script src="{% static 'js/create_code.js' %}" defer></script>
     <main>
         <form class="details" method="POST">
             {% csrf_token %}
@@ -25,6 +26,7 @@
             <span class="info">
                 <p>Колір</p>
                 <div class="colors">
+                    <input type="text" style="display: none;" name="color">
                     <div style="background-color: #000000;" class="color"></div>
                     <div style="background-color: #9747FF;" class="color"></div>
                     <div style="background-color: #0900FF;" class="color"></div>
@@ -36,6 +38,24 @@
                     <div style="background-color: #0900FF;" class="color"></div>
                 </div>
             </span>
+            <span class="info">
+                <span class="info">
+                    <p>Колір фону</p>
+                    <div class="colors">
+                        <input type="text" style="display: none;" name="color">
+                        <div style="background-color: #000000;" class="color"></div>
+                        <div style="background-color: #9747FF;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                        <div style="background-color: #00D9FF;" class="color"></div>
+                        <div style="background-color: #59FF00;" class="color"></div>
+                        <div style="background-color: #FFF600;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                        <div style="background-color: #0900FF;" class="color"></div>
+                    </div>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="file-upload" name="file" accept="image/*">
+                </form>
             <span class="info">
                 <p>Опис</p>
                 <input type="text" name = 'description'>

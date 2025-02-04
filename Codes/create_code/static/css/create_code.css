@@ -4,12 +4,16 @@
     box-sizing: border-box;
     color: #17153B;
 }
+
 input{
     color: #C8ACD6;
 }
 main .details{
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
+    overflow-y: scroll;
+    justify-content: flex-start;
     width: 60%;
     height: 400px;
 }
@@ -86,4 +90,48 @@ main{
 .download-image{
     width: 40px;
     height: 40px;
+}
+
+.file-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .upload-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%; 
+    text-align: center;
+}
+
+.upload-btn:hover {
+    background-color: #0056b3;
+} */
+
+/* input[type="file"] {
+    font-size: 22px; 
+} */
+
+/* #file-name {
+    font-style: italic;
+    color: #555;
+    width: 48%;
+    text-align: right;
+    padding-left: 10px;
+} */
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+input[type="file"] {
+    font-size: 20px;
 }

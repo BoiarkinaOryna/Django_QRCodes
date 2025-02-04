@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Code(models.Model):
     image_qr = models.ImageField(upload_to = '', null = True)
     title = models.CharField(max_length = 255)
-    date_time = models.DateTimeField(auto_now_add = True, null = True)
+    date_time = models.DateTimeField(auto_now_add = True)
     expire_date = models.DateTimeField(null = True) 
     costumization = models.CharField(max_length = 255, null = True)
     url = models.URLField()
