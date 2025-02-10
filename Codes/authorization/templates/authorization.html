@@ -45,10 +45,11 @@
                 <button type="submit" class="login-button">
                     Підтвердити
                 </button>
+                {% if fail %}
+                    <p class="error">Ви ввели невірний пароль або такого користувача не існує. Спробуйте зареєструватися.</p>
+                {% endif %}
             </form>
-            {% if fail %}
-                <p class="error">Ви ввели невірний пароль або такого користувача не існує. Спробуйте зареєструватися.</p>
-            {% endif %}
+            
         </div>
     </main>
 {% endblock %}

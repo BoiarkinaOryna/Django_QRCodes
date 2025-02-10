@@ -25,12 +25,13 @@
     bottom: 40px;
 }
 main{
+    padding: 0px 50px 100px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 100px;
-    width: 100%;
+    width: 80%;
     /* height: 450px; */
 }
 .cards span{
@@ -53,10 +54,13 @@ main{
     justify-content: space-between;
 }
 .cards{
+    /* position: relative;
+    right: 30px; */
     display: flex;
     gap: 90px;
     align-items: center;
-    flex-direction: row;
+    flex-direction: wrap;
+    flex-wrap: wrap;
 }
 .lite{
     /* position: relative; */
@@ -139,4 +143,11 @@ main{
     flex-direction: column;
     width:700px;
     align-items: center;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#C8ACD6, #433D8B);
+    border-radius: 5px;
 }

@@ -226,6 +226,9 @@ main{
     cursor: pointer;
     transition: background-color 0.2s;
 }
+.error{
+    color: #ff0000;
+}
 
 .login-button:hover {
     background: #2E236C;
@@ -249,4 +252,11 @@ main{
     .container {
         padding: 10px;
     }
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#C8ACD6, #433D8B);
+    border-radius: 5px;
 }

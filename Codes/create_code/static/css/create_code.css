@@ -5,22 +5,19 @@
     color: #17153B;
 }
 
-input{
-    color: #C8ACD6;
-}
 main .details{
     display: flex;
-    flex-shrink: 0;
     flex-direction: column;
-    overflow-y: scroll;
-    justify-content: flex-start;
+    /* flex-shrink: 0; */
+    /* justify-content: flex-start; */
     width: 60%;
-    height: 400px;
+    height: 550px;
 }
 .details .info{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    /* overflow-y: scroll; */
+    padding-right: 20px;
     gap: 10px;
 }
 .info p{
@@ -28,11 +25,12 @@ main .details{
     color: #C8ACD6;
 }
 .info input{
-    height: 40px;
     width: 100%;
     border: 5px solid #433D8B;
     border-radius: 10px;
+    font-size: 20px;
     background-color: #17153B;
+    color: #C8ACD6;
 }
 main .code{
     display: flex;
@@ -53,12 +51,12 @@ main .code{
     justify-content: center;
     width: 250px;
     height: 50px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     gap: 10px;
-    border: 5px solid #433D8B;
+    border: 5px solid #C8ACD6;
     border-radius: 10px;
-    background-color: #C8ACD6;
+    background-color: #433D8B;
 }
 main{
     display: flex;
@@ -66,17 +64,21 @@ main{
     padding: 0px 200px;
     align-items: center;
     background-color: #17153B;
+    width: 80%;
 }
 .colors{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.color{
+.color, .bgColor{
     width: 40px;
     height: 40px;
     border: 5px solid #433D8B;
     border-radius: 30px;
+}
+.current, .currentBg{
+    border: 5px solid #C8ACD6;
 }
 .button-container{
     display: flex;
@@ -84,12 +86,13 @@ main{
     align-items: center;
     gap: 15px;
 }
-.error{
+.info .error{
     color: #ff0000;
 }
 .download-image{
     width: 40px;
     height: 40px;
+    transform: scaleX(-1);
 }
 
 .file-container {
@@ -125,7 +128,7 @@ main{
     padding-left: 10px;
 } */
 
-form {
+.color-form{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,4 +137,11 @@ form {
 
 input[type="file"] {
     font-size: 20px;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#C8ACD6, #433D8B);
+    border-radius: 5px;
 }
