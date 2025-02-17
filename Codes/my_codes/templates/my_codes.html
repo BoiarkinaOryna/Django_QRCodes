@@ -14,24 +14,17 @@
     <main>
         <h1 class="view">Ваші коди</h1>
         <div class="codes">
-            <div class="card">
-                <img src="{% static 'images/pixel-frame.png' %}" alt="code-image">
-                <div class="info">
-                    <p class="text-info">Назва: text</p>
-                    <p class="text-info">Колір: text</p>
-                    <p class="text-info">Час створення: text</p>
-                    <p class="text-info">Опис: text</p>
+            {% for code in codes %}
+                <div class="card">
+                    <img src="{{ code.image_qr.url }}" alt="code-image">
+                    <div class="info">
+                        <p class="text-info">Назва: {{ code }}</p>
+                        <p class="text-info">Колір: {{ code.color }}</p>
+                        <p class="text-info">Час створення: {{ code.date_time }}</p>
+                        <p class="text-info">Опис: {{ code.description }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="{% static 'images/pixel-frame.png' %}" alt="code-image">
-                <div class="info">
-                    <p class="text-info">Назва: text</p>
-                    <p class="text-info">Колір: text</p>
-                    <p class="text-info">Час створення: text</p>
-                    <p class="text-info">Опис: text</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </main>
 {% endblock %}

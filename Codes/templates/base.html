@@ -26,7 +26,7 @@
                 <img class="vector-bg" src="{% static 'images/vector.png' %}" alt="">
                 {% if authenticated %}
                     <div>
-                        <p>Вийти</p>
+                        <p class="username">{{ user }}</p>
                         <a href="{% url 'logout' %}"><img src="{% static 'images/logout.png' %}" alt="logout"></a>
                     </div>
                 {% endif %}

@@ -20,55 +20,32 @@
                 <input type="text" name="title" required>
                 <p>URL</p>
                 <input type="text" name="url" required>
-                <p>Колір</p>
                 <div class="colors">
-                    <input id="inputColor" type="text" style="display: none;" name="color">
-                    <!-- <input id="inputColor" type="text" name="color"> -->
-                    <div style="background-color: #000000;" class="color" id="black"></div>
-                    <div style="background-color: #9747FF;" class="color" id="purple"></div>
-                    <div style="background-color: #0900FF;" class="color" id="blue"></div>
-                    <div style="background-color: #00D9FF;" class="color" id="lightBlue"></div>
-                    <div style="background-color: #59FF00;" class="color" id="green"></div>
-                    <div style="background-color: #FFF600;" class="color" id="yellow"></div>
-                    <div style="background-color: #ffA500;" class="color" id="orange"></div>
-                    <div style="background-color: #ff0000;" class="color" id="red"></div>
-                    <div style="background-color: #ffffff;" class="color" id="white"></div>
-                </div>
-                <p>Колір фону</p>
-                <div class="colors">
-                    <input id="inputBgColor" type="text" style="display: none;" name="bg_color">
-                    <!-- <input id="inputBgColor" type="text" name="bg_color"> -->
-                    <div style="background-color: #000000;" class="bgColor" id="black"></div>
-                    <div style="background-color: #9747FF;" class="bgColor" id="purple"></div>
-                    <div style="background-color: #0900FF;" class="bgColor" id="blue"></div>
-                    <div style="background-color: #00D9FF;" class="bgColor" id="lightBlue"></div>
-                    <div style="background-color: #59FF00;" class="bgColor" id="green"></div>
-                    <div style="background-color: #FFF600;" class="bgColor" id="yellow"></div>
-                    <div style="background-color: #ffA500;" class="bgColor" id="orange"></div>
-                    <div style="background-color: #ff0000;" class="bgColor" id="red"></div>
-                    <div style="background-color: #ffffff;" class="bgColor" id="white"></div>
+                    <div class="color-input">
+                        <p>Колір</p>
+                        <input id="inputColor" type="color" name="color">
+                    </div>
+                    <div class="color-input">
+                        <p>Колір фону</p>
+                        <input id="inputBgColor" value="#ffffff" type="color" name="bg_color">
+                    </div>
                 </div>
                 <p>Зображення в центрі</p>
                 <input type="file" id="file-upload" name="center_image" accept="image/*">
                 <p>Розмір (рекомандовано від 1 до 10)</p>
-                <input type="number" name="version" id="" required>
+                <input type="number" name="version" id="" min="1" max="40" required>
+                <p>Скруглення (дробове число від 0 до 1)</p>
+                <input value="0" type="number" name="radius" id="" step="0.01" min="0" max="1">
                 <p>Опис</p>
                 <input type="text" name='description'>
                 <div class="button-container">
-                    <!-- <button class="button" type='submit'>
-                        Зберегти
-                    </button> -->
+
                     <button class="button" method = "POST">
                         Застосувати зміни
                         <img class="download-image" src="{% static 'images/repeat.png' %}" alt="">
                     </button>
                 </div>
-                <!-- {% if empty_inputs_error %}
-                    <p class="error">Не вдалося зберегти qr-код. Перевірте, чи всі поля заповнені.</p>
-                {% endif %} -->
-                {% if anonimus_user_error %}
-                    <p class="error">Незареєстровані користувачі не можуть створювати коди. Реєстрація безкоштовна.</p>
-                {% endif %}
+
             </span>
         </form>
         <div class="code">
@@ -76,7 +53,7 @@
                 <img class="qrcode" src="{% static 'images/pixel-frame.png' %}" alt="pipel-code">
             {% endif %}
             {% if code %}
-                <img class="qrcode" src="{{ code.image_qr }}" alt="pipel-code">
+                <img class="qrcode" src="{{ code.image_qr.url }}" alt="pipel-code">
             {% endif %}
             <button class="button">
                 Завантажити

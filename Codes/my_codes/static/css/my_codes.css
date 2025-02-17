@@ -10,6 +10,7 @@ main .codes{
     flex-wrap: wrap;
     padding: 5% 20% 5% 20%;
     align-items: center;
+    justify-content: center;
     gap: 50px;
 }
 .codes .card{

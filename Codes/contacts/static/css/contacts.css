@@ -10,6 +10,7 @@ main{
     align-items: center;
     justify-content: center;
     gap: 200px;
+    width: 80%;
 }
 .box{
     background-color: red;
@@ -75,25 +76,6 @@ input{
     text-align: center;
 }
 
-.main-social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 10px;
-}
-
-.main-social-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.main-social-icon {
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 ::-webkit-scrollbar{
     width: 10px;
 }

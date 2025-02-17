@@ -7,7 +7,7 @@ class Code(models.Model):
     title = models.CharField(max_length = 255)
     date_time = models.DateTimeField(auto_now_add = True)
     expire_date = models.DateTimeField(null = True) 
-    costumization = models.CharField(max_length = 255, null = True)
+    costomization = models.CharField(max_length = 255, null = True)
     url = models.URLField()
     color = models.CharField(max_length = 40)
     bgcolour = models.CharField(max_length = 255)
