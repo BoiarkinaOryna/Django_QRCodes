@@ -62,10 +62,10 @@ main{
     display: flex;
     flex-direction: row;
     padding: 0px 150px;
+    margin-bottom: 100px;
     align-items: center;
     justify-content: center;
     background-color: #17153B;
-    width: 80%;
 }
 .colors{
     display: flex;
@@ -80,6 +80,10 @@ main{
 }
 .color-input input{
     height: 50px;
+}
+.error{
+    color: red;
+
 }
 /* .color, .bgColor{
     width: 40px;

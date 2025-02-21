@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    <script src="{% static 'js/script.js' %}" defer></script>
     <main>
         <div class = "cards">
             <span>
@@ -18,22 +19,22 @@
                     <h1>Free</h1>
                 </div>
                 <p class = "description">Можна створити один QR-код на 6-ть місяців.</p>
-                    <h1 class = "lite">$0
-                        USD/місяць</h1>
-                        <div class = "button">
-                            <h1>Безкоштовно</h1>
-                        </div> 
+                <h1 class = "lite">$0
+                    USD/місяць</h1>
+                    <div class = "button">
+                        <h1>Безкоштовно</h1>
+                    </div> 
             </span>
             <span>
                 <div class = "card-header">
                     <h1>Standart</h1>
                 </div>
                 <p class = "description">Можна створити 10 кастомізованих QR-кодів.</p>
-                    <h2 class = "pro"> $2
-                        USD/місяць</h2>
-                        <div class = "button">
-                            <h1>Купити</h1>
-                        </div> 
+                <h2 class = "pro"> $2
+                    USD/місяць</h2>
+                    <div class = "button">
+                        <h1>Купити</h1>
+                    </div> 
             </span>  
             <span>
                 <div class = "card-header">
@@ -59,4 +60,5 @@
             <a href="{% url 'create_code' %}">Згенерувати</a>
         </div>           
     </main>
+
 {% endblock %}

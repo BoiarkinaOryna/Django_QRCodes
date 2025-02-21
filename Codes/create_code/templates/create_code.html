@@ -16,36 +16,43 @@
         <form class="details" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <span class="info">
-                <p>Назва</p>
-                <input type="text" name="title" required>
-                <p>URL</p>
-                <input type="text" name="url" required>
-                <div class="colors">
-                    <div class="color-input">
-                        <p>Колір</p>
-                        <input id="inputColor" type="color" name="color">
+                {% if not odd_number %}
+                    <p>Назва</p>
+                    <input type="text" name="title" required>
+                    <p>URL</p>
+                    <input type="text" name="url" required>
+                    <div class="colors">
+                        <div class="color-input">
+                            <p>Колір</p>
+                            <input id="inputColor" type="color" name="color">
+                        </div>
+                        <div class="color-input">
+                            <p>Колір фону</p>
+                            <input id="inputBgColor" value="#ffffff" type="color" name="bg_color">
+                        </div>
                     </div>
-                    <div class="color-input">
-                        <p>Колір фону</p>
-                        <input id="inputBgColor" value="#ffffff" type="color" name="bg_color">
+                    <p>Розмір (рекомандовано від 1 до 10)</p>
+                    <input type="number" name="version" id="" min="1" max="40" required>
+                    {% if not user_status %}
+                        <p>Підпишіться, щоб отримати змогу створювати красивіші QR-коди.</p>
+                    {% else %}
+                        <p>Зображення в центрі</p>
+                        <input type="file" id="file-upload" name="center_image" accept="image/*">
+                        <p>Скруглення (дробове число від 0 до 1)</p>
+                        <input value="0" type="number" name="radius" id="" step="0.01" min="0" max="1">
+                        <p>Опис</p>
+                        <input type="text" name='description'>
+                    {% endif %}
+                    <div class="button-container">
+
+                        <button class="button" type="submitu">
+                            Застосувати зміни
+                            <img class="download-image" src="{% static 'images/repeat.png' %}" alt="">
+                        </button>
                     </div>
-                </div>
-                <p>Зображення в центрі</p>
-                <input type="file" id="file-upload" name="center_image" accept="image/*">
-                <p>Розмір (рекомандовано від 1 до 10)</p>
-                <input type="number" name="version" id="" min="1" max="40" required>
-                <p>Скруглення (дробове число від 0 до 1)</p>
-                <input value="0" type="number" name="radius" id="" step="0.01" min="0" max="1">
-                <p>Опис</p>
-                <input type="text" name='description'>
-                <div class="button-container">
-
-                    <button class="button" method = "POST">
-                        Застосувати зміни
-                        <img class="download-image" src="{% static 'images/repeat.png' %}" alt="">
-                    </button>
-                </div>
-
+                {% else %}
+                    <p class="error">Досягнута максимальна кількість створених QR-кодів. Можете обрати іншу підписку для біьшого ліміту.</p>
+                {% endif %}
             </span>
         </form>
         <div class="code">
@@ -59,6 +66,12 @@
                 Завантажити
                 <img class="download-image" src="{% static 'images/load.png' %}" alt="">
             </button>
+            {% if number_error %}
+                <p class="error">Виникла помилка під час створення qrcode. Ви перевищили доступну кількість створення qrcode. Для збільшення кількості придбайте нову підписку.</p>
+            {% endif %}
+            {% if creation_error %}
+                <p class="error">Виникла помилка під час створення qrcode. Костамізувати qrcode можна лише з підпискою.</p>
+            {% endif %}
         </div>
     </main>
 {% endblock %}
