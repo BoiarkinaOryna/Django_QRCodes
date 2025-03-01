@@ -46,8 +46,7 @@ def render_create_code(request: HttpRequest):
     num_qr = Code.objects.filter(creator_id = user.id)
     num_qr = (len(num_qr))
     print("num_qr =", num_qr)
-
-    prymary_key = Code.objects.all().__len__() + 1
+    prymary_key = Code.objects.last().id + 1
     print("primare_key =", prymary_key)
 
     if num_qr < max_qr_num:

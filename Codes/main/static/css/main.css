@@ -210,14 +210,19 @@ form label{
     font-size: 30px;
     color: #C8ACD6;
 }
+.card-info{
+    color: #C8ACD6;
+}
 .form-input{
-    display: none;
-    /* width: 100%;
+    width: 100%;
     border: 5px solid #433D8B;
     border-radius: 10px;
     font-size: 20px;
     background-color: #17153B;
-    color: #C8ACD6; */
+    color: #C8ACD6;
+}
+.hidden-input{
+    display: none;
 }
 .form-button{
     font-size: 24px;

@@ -6,7 +6,7 @@ class SubForm(forms.ModelForm):
         model = Subscription
         fields = ["subscription"]
         widgets = {
-            "subscription": forms.TextInput(attrs = {"class": "form-input", "placeholder": "Підписка"})
+            "subscription": forms.TextInput(attrs = {"class": "form-input hidden-input", "placeholder": "Підписка"})
         }
 
     def save(self, user_id):
