@@ -34,6 +34,7 @@ main{
     width: 80%;
     /* height: 450px; */
 }
+
 .cards span{
     /* position: relative; */
     bottom: 15px;
@@ -52,6 +53,50 @@ main{
     font-size: 18px;
     font-weight: bold;
     justify-content: space-between;
+}
+.desktop{
+    background-color: #C8ACD6;
+    bottom: 15px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 280px;
+    height:  402px;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    border: 5px solid rgba(67, 61, 139, 1);
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: space-between; width: 280px;
+    height:  402px;
+}
+.text-d{
+    font-size: 20px;
+    bottom: 40px;
+}
+.desktop_p{
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(23, 21, 59, 1)
+}
+.card-header-d{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    -webkit-text-stroke-width: 1px;;
+    -webkit-text-stroke-color: rgba(200, 172, 214, 1);
+    border: 5px solid rgba(23, 21, 59, 1);
+    /* position: relative; */
+    color: white;
+    bottom: 50px;
+    left: 45px;
+    background-color: rgba(68, 61, 139, 1);
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
 }
 .cards{
     /* position: relative;
@@ -97,6 +142,7 @@ main{
     font-weight: bold;
     color: rgba(23, 21, 59, 1)
 }
+
 .button h1{
     border-color: 3px solid rgba(23, 21, 59, 1);
     color: white;
@@ -105,7 +151,7 @@ main{
     font-size: 24px;
 }
 
-.generate{
+.generate, .form-button{
     display: flex;
     /* position: relative; */
     /* left: 305px; */
@@ -127,7 +173,6 @@ main{
     text-decoration: none;
 }
 .head-i{
-    
     font-size: 30px;
     color: rgba(200, 172, 214, 1);
     -webkit-text-stroke-width: 1px;;
@@ -142,8 +187,40 @@ main{
 .instruction{
     display: flex;
     flex-direction: column;
-    width:700px;
+    width: 700px;
     align-items: center;
+}
+.form-container{
+    display: none;
+    width: 80%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 300px;
+    gap: 20px;
+    /* background-color: red; */
+}
+.field-block{
+    gap: 10px;
+}
+form label{
+    font-size: 30px;
+    color: #C8ACD6;
+}
+.form-input{
+    display: none;
+    /* width: 100%;
+    border: 5px solid #433D8B;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #17153B;
+    color: #C8ACD6; */
+}
+.form-button{
+    font-size: 24px;
 }
 ::-webkit-scrollbar{
     width: 10px;

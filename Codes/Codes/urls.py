@@ -20,7 +20,6 @@ from registration.views import render_registretion
 from main.views import render_main
 from contacts.views import render_contacts
 from my_codes.views import render_my_codes_page
-from create_code.views import render_create_code
 from . import settings
 from django.conf.urls.static import static
 
@@ -31,7 +30,7 @@ urlpatterns = [
     path('reg/', render_registretion, name='registration'),
     path('contacts/', render_contacts, name='contacts'),
     path('my_codes/', render_my_codes_page, name = "my_codes"),
-    path('create_code/', render_create_code, name = "create_code")
+    path('create_code/', include("create_code.urls"))
 ]
 
 if settings.DEBUG:

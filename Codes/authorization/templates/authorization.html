@@ -30,15 +30,14 @@
             
             
             <form class="login-form" method="post">
+                {% csrf_token %}
                 <div class="input-group email">
                     <label>Нікнейм</label>
-                    {% csrf_token %}
                     <input type="text" placeholder="_iva_" name="username">
                 </div>
                 
                 <div class="input-group password">
                     <label>Пароль</label>
-                    {% csrf_token %}
                     <input type="password" placeholder="Enter your password" name="password">
                 </div>
         

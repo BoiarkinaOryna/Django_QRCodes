@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Subsciption
+from .models import Subscription
 # Register your models here.
-admin.site.register(Subsciption)
+admin.site.register(Subscription)

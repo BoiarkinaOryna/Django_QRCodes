@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpRequest
 
-def render_authorization(request):
+def render_authorization(request: HttpRequest):
     fail = False
     if request.method == "POST":
         username = request.POST.get('username')

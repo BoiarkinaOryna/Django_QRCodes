@@ -11,6 +11,7 @@ main .details{
     /* flex-shrink: 0; */
     /* justify-content: flex-start; */
     width: 60%;
+    max-width: 600px;
     height: 550px;
 }
 .details .info{
@@ -37,7 +38,7 @@ main .code{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
+    margin-left: 50px;
     height: 400px;
 }
 .code .qrcode{
@@ -63,6 +64,7 @@ main{
     flex-direction: row;
     padding: 0px 150px;
     margin-bottom: 100px;
+    width: 80%;
     align-items: center;
     justify-content: center;
     background-color: #17153B;
@@ -81,9 +83,8 @@ main{
 .color-input input{
     height: 50px;
 }
-.error{
+.info .error{
     color: red;
-
 }
 /* .color, .bgColor{
     width: 40px;

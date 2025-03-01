@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.http import HttpRequest
 # from .models import MyUser
 
-def render_registretion(request):
+def render_registretion(request: HttpRequest):
     password_error = False
     create_user_error = False
     print("registration start", "\n", "request.method =", request.method)
