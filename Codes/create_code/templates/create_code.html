@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <script src="{% static 'js/create_code.js' %}" defer></script>
+    <!-- <script src="{% static 'js/create_code.js' %}" defer></script> -->
     <main>
         <form class="details" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
@@ -74,10 +74,7 @@
             {% if code %}
                 <img class="qrcode" src="{{ code.image_qr.url }}" alt="pipel-code">
             {% endif %}
-            <button class="button">
-                Завантажити
-                <img class="download-image" src="{% static 'images/load.png' %}" alt="">
-            </button>
+            <p style="color: #C8ACD6; max-width: 300px;">Щоб завантажити код, перейдіть на сторінку "Мої QR-коди".</p>
         </div>
     </main>
 {% endblock %}

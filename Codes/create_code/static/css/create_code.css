@@ -86,69 +86,24 @@ main{
 .info .error{
     color: red;
 }
-/* .color, .bgColor{
-    width: 40px;
-    height: 40px;
-    border: 5px solid #433D8B;
-    border-radius: 30px;
-}
-.current, .currentBg{
-    border: 5px solid #C8ACD6;
-} */
 .button-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-.download-image{
-    width: 40px;
-    height: 40px;
-    transform: scaleX(-1);
-}
-
 .file-container {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
 }
-
-/* .upload-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 48%; 
-    text-align: center;
-}
-
-.upload-btn:hover {
-    background-color: #0056b3;
-} */
-
-/* input[type="file"] {
-    font-size: 22px; 
-} */
-
-/* #file-name {
-    font-style: italic;
-    color: #555;
-    width: 48%;
-    text-align: right;
-    padding-left: 10px;
-} */
-
-/* .color-form{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-} */
-
 input[type="file"] {
     font-size: 20px;
+}
+.download-image{
+    width: 40px;
+    height: 40px;
 }
 ::-webkit-scrollbar{
     width: 10px;

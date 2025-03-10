@@ -23,6 +23,7 @@ def render_create_code(request: HttpRequest):
     number_error = False
     code = False
     user_status = False
+    desktop_quantity = False
     desktop = False
     user = request.user
     is_desktop_mess_error = False
@@ -30,6 +31,7 @@ def render_create_code(request: HttpRequest):
     subscription = Subscription.objects.filter(user_id = user.id)
     for pk in range(len(subscription)):
         user_status = subscription[pk].subscription
+        desktop_quantity = subscription[pk].desktopQuantity
         print("user_status =", user_status)
     if user_status == "Pro":
         max_qr_num = 100
@@ -38,7 +40,7 @@ def render_create_code(request: HttpRequest):
     elif not user_status:
         max_qr_num = 1
     else:
-        max_qr_num = int(user_status.split(":")[1]) * 5
+        max_qr_num = int(desktop_quantity) * 5
         print("Is desktop subscription -", max_qr_num)
         desktop = True
 
@@ -75,8 +77,8 @@ def render_create_code(request: HttpRequest):
                     is_desktop_mess_error = True
 
             print("desktop message errors:", int(is_desktop_mess_error), int(is_not_desktop_mess_error))
-            if not is_not_desktop_mess_error and not is_not_desktop_mess_error:
-                print("user_subscribtion =", user_status)
+            if not is_desktop_mess_error and not is_not_desktop_mess_error:
+                print("user_subscription =", user_status)
                 folder_path = f"media/{request.user}"
                 if not os.path.exists(folder_path):
                     os.makedirs(folder_path)
@@ -184,4 +186,5 @@ def render_redirect(request: HttpRequest, pk: int):
         # print("url =", url)
         return redirect(code_url)
     else:
-        return HttpResponse(f"Redirection {code_url, code.expire_date, expire_date}")
+        return HttpResponse("Срок дії кода вичерпано")
+        # return HttpResponse(f"Redirection {code_url, code.expire_date, expire_date}")

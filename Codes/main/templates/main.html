@@ -75,26 +75,30 @@
     <span class="form-container">
         <form action="" method="post">
             {% csrf_token %}
-            {% for field in form %}
-                <div class="field-block">
-                    <label for="{{ field.id_for_label }}">
-                        {% if field.label == "Subscription" %}
-                            Підписка
-                        {% else %}
-                            {{ field.label }}
-                        {% endif %}
-                    </label>
-                    {{ field }}
-                </div>
-                <div class="field-errors">
-                    {{ field.errors }}
-                </div>
-            {% endfor %}
-            <p class="card-info">Номер картки</p>
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" class="form-input" required>
-            <p class="card-info">Пароль</p>
-            <input type="password" class="form-input">
-            <button class="form-button" type="submit">Зберегти</button>
+                {% for field in form %}
+                    <div class="field-block" id="{{ field.label }}">
+                        <label for="{{ field.id_for_label }}">
+                            {% if field.label == "Subscription" %}
+                                Підписка
+                            {% elif field.label == "DesktopQuantity" %}
+                                Сплачувана сума (За 1$ створити 5 QR-кодів)
+                            {% else %}
+                                {{ field.label }}
+                            {% endif %}
+                        </label>
+                        {{ field }}
+                    </div>
+                    <div class="field-errors">
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+                <label for="">Номер картки</label>
+                <!-- <p class="card-info">Номер картки</p> -->
+                <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" class="form-input" required>
+                <!-- <p class="card-info">Пароль</p> -->
+                 <label for="">Пароль</label>
+                <input type="password" class="form-input">
+                <button class="form-button" type="submit">Зберегти</button>
         </form>
     </span>
 

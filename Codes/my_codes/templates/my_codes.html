@@ -23,6 +23,14 @@
                         <p class="text-info">Час створення: {{ code.date_time }}</p>
                         <p class="text-info">Опис: {{ code.description }}</p>
                     </div>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="text", style="display: none;", name="image_name" value="{{ code }}">
+                        <button class="button" type="submit">
+                            Завантажити
+                            <img class="download-image" src="{% static 'images/load.png' %}" alt="">
+                        </button>
+                    </form>
                 </div>
             {% endfor %}
         </div>
