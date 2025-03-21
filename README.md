@@ -9,7 +9,7 @@ English version is [_below_](#qr-code-generator).
 - Можливість створення QR-кодів з покращеним зовнішнім виглядом.
 - Різні варіанти створення вмісту QR-кодів.
 - User-friendly інтерфейс.
-- Ціна, доступна кожному.
+- Генерація доступна як з доступом до інтернету (на хості), так і без нього (запустити локально). 
 
 
 ## План-навігація
@@ -46,7 +46,8 @@ English version is [_below_](#qr-code-generator).
 4. Головна
 5. Сторінка перегляду QR-кодів, створених користувачем
 6. Реєстрація
-
+   
+![Structure](readme_images/structure.jpg)
 
 ## Опис застосунків
 
@@ -54,7 +55,7 @@ English version is [_below_](#qr-code-generator).
 
 У функції відображення сторінки перевіряється, чи створено акаунт користувача і відбвувається логінцього кистувача.
 
-```
+```ruby
 def render_authorization(request: HttpRequest):
     fail = False
     if request.method == "POST":
@@ -72,7 +73,7 @@ def render_authorization(request: HttpRequest):
             fail = True
     return render(
         request=request,
-        template_name='authorization.html',
+        template_name='authorization.html,
         context = {
             'fail': fail,
             'authenticated': request.user.is_authenticated
@@ -82,7 +83,7 @@ def render_authorization(request: HttpRequest):
 Розлогінитись можна з будь-якої сторінки сайту, натиснувши на відповідну картнку у шапці сайту.
 У функції відображення користувача перенаправляє на сторінку входу в акаунт.
 
-```
+```ruby
 def render_logout(request):
     logout(request = request)
     return redirect('authorization')
@@ -102,7 +103,7 @@ def render_logout(request):
     - desktopquantity - якщо користувач купив підписку desktop, то у цьому полі вказується максимальна кількість QR-кодів![Site screen](readme_images/home_desktop.png)
     Після того як користвач вибрав оптимальний для себе варіант, він натискає кнопку "Згенерувати".
 
-```
+```ruby
 def render_main(request: HttpRequest):
     if request.method == "POST":
         if request.user:
@@ -138,7 +139,7 @@ def render_main(request: HttpRequest):
     description - відповідає за опис  QR-кода
     center_image - відповідає за картинку, що знаходиметься у центрі  QR-кода![Site screen](readme_images/create_code.png)
 
-```
+```ruby
 @login_required
 def render_create_code(request: HttpRequest):
     ...
@@ -174,7 +175,7 @@ def render_create_code(request: HttpRequest):
 
 3. На сторінці моїх QR-кодів відображатимуться зроблені користувачем QR-коди. ![Site screen](readme_images/my_codes.png)
 
-```
+```ruby
 @login_required
 def render_my_codes_page(request: HttpRequest):
     codes = Code.objects.filter(creator = request.user)
@@ -197,7 +198,7 @@ def render_my_codes_page(request: HttpRequest):
 
 4. На сторінці реєстрації новий користувач вводить свої дані та створює свій пароль, який буде використовувати у майбутньому. ![Site screen](readme_images/reg.png)
 
-```
+```ruby
 def render_registretion(request: HttpRequest):
     if request.method == "POST":
         ...
@@ -218,7 +219,7 @@ def render_registretion(request: HttpRequest):
         
     return render(
         request=request,
-        template_name='registration.html',
+        template_name='registration.html,
         context = {
             'authenticated': request.user.is_authenticated,
             'password_error': password_error,
@@ -231,29 +232,55 @@ def render_registretion(request: HttpRequest):
 
 ## Як запустити проєкт
 
-##### Для того, щоб запустити сайт локально потрібно його завантажити.
+##### Для того, щоб запустити сайт локально - потрібно його завантажити.
+
+> [!IMPORTANT]
+> Якщо у Вас не завантажені git або python, то Ви можете це виправити, скориставшись відповідними інструкціями:
+
+- [x] За допомогою [сайту](https://git-scm.com/downloads) можна завантажити git.
+- [x] Щоб завантажити python, скористайтеся [сайтом](https://www.python.org/downloads).
 
 1. По-перше, перейдіть за посиланням на [GitHub](https://github.com/BoiarkinaOryna/Django_QRCodes). 
 Праворуч зверху від папок буде зелена кнопка __Code__, на яку треба натиснути.
 ![Site screen](readme_images/start0.jpg)
-2. У Вас відкриється можальне вікно, з якого Ви зможете завантажити код двома способами.
+2. У Вас відкриється модальне вікно, з якого Ви зможете завантажити код двома способами.
 - Склонувати проєкт, ввівши у терміналі (командному рядку), команду:
-```
+```ruby
 git clone https://github.com/BoiarkinaOryna/Django_QRCodes.git
 ```
 - Завантажити проєкт у zip-форматі (потім треба його розархівувати).
 ![Site screen](readme_images/start1.jpg)
-3. Відкрити папку з проєктом у середовищі для кодингу, наприклад, VS-code і відкрити термінал у лівому верхньому кутку.
+3. Відкрити папку з проєктом у середовищі для кодингу, наприклад, VS-code (завантажити можна [на сторінці](https://code.visualstudio.com/download)) і відкрити термінал у лівому верхньому кутку.
 ![Site screen](readme_images/start2.jpg)
 4. У терміналі введіть наступні команди:
-![Site screen](readme_images/start4-3.png)
+> [!IMPORTANT]  
+> Якщо Ви використовуєте Windows, після "pip" та "python" у наступних не ставити "3".
+```ruby
+pip3 install -r requirements.txt
+```
+Після цього, Вам завантажуться усі необхідні модулі. За бажанням можна створити віртуальне оточення.
+Далі:
+![Site screen](readme_images/start4.png)
 Після чого треба лише затиснути __cntrl__ і натиснути __лівою кнопкою миші__ на посилання.
 
 ## Висновок
 
-- Перший проєкт на Django виявився дуже корисним, оскільки ним ми самі користуємося у житті для різних своїх справ, не лише задля практики. Цей проєкт був дуже важливим, бо це початок нашої роботи з новим фреймворком, і сподіваємося, що не останній.
-- Під час написання коду у нас виникало доволі багато труднощів, починаючи від найлегшого, як створення форми кастомізації QR-кодів, закінчуючи найскладнішим, як роботою з медіа-файлами. Також були проблеми з опрацюванням сторінки за допомогою __JavaScript__ та самостійним ознайомленням з бібліотекою __qrcodes__. Але ми легко вирішили ці проблеми, оскільки були готові до того, що буде багато нової інформації для нас, та усією командою швидко усе вивчили.
-- Наш проєкт є універсальним QR-код сайтом, тому виправляти та додати майже нічого не треба, але звісно з часом, коли ми наберемося більшої практики, аніж зараз, то можна буде підкорегувати дизайн. Але якщо казати про удосконалення проєкта зараз, то можна додати більше варіантів покупки підписок, оскільки для кожної людини важко підібрати ідеальну для неї підписку. До сторінки створення кодів можна було б додати більше опцій кастомізації QR-кодів. 
+- #### Ми застосовували багато технологій, як нових, так і старих, а саме:
+1. Це був перший повноцінний проєкт на фреймворку Django.
+2. Для контролю версій застосовувався git. За допомогою гілок, робота в команді була більш гнучною.
+3. HTML, css - обличчя нашого сайту.
+4. Щоб зменшити обсяг коду та дадавання різних можливостей під час роботи зі сторінками, ми працювали з jinja2. 
+5. Для роботи на frontend, застосовувався JavaScript.
+6. За допомогою бібліотеки qrcodes генеруються QR-коди.
+7. Figma використовувалася для розробки дизайну, для систематизації застосунків та планування бази даних.
+8. Інформація про користувачів, підписки та QR-коди зберігалася у базі даних sqlite.
+9. Задіяна технологія віртуального оточення.
+
+- #### Перший проєкт на Django виявився дуже корисним, оскільки ним ми самі користуємося у житті для різних своїх справ, не лише задля практики. Цей проєкт був дуже важливим, бо це початок нашої роботи з новим фреймворком, і сподіваємося, що не останній.
+  
+- #### Під час написання коду у нас виникало доволі багато труднощів, починаючи від найлегшого, як створення форми кастомізації QR-кодів, закінчуючи найскладнішим, як роботою з медіа-файлами. Також були проблеми з опрацюванням сторінки за допомогою __JavaScript__ та самостійним ознайомленням з бібліотекою __qrcodes__. Але ми легко вирішили ці проблеми, оскільки були готові до того, що буде багато нової інформації для нас, та усією командою швидко усе вивчили.
+  
+- #### Наш проєкт є універсальним QR-код сайтом, тому виправляти та додати майже нічого не треба, але звісно з часом, коли ми наберемося більшої практики, аніж зараз, то можна буде підкорегувати дизайн. Але якщо казати про удосконалення проєкта зараз, то можна додати більше варіантів покупки підписок, оскільки для кожної людини важко підібрати ідеальну для неї підписку. До сторінки створення кодів можна було б додати більше опцій кастомізації QR-кодів. 
 
 # QR-code generator
 
@@ -263,7 +290,7 @@ git clone https://github.com/BoiarkinaOryna/Django_QRCodes.git
 - The ability to create QR codes with an improved appearance.
 - Various options for creating QR code content.
 - User-friendly interface.
-- Affordable price for everyone.
+- Generation is available with the internet connection (host) and without it (local).
 
 
 ## Plan-navigation
@@ -283,8 +310,8 @@ git clone https://github.com/BoiarkinaOryna/Django_QRCodes.git
 
 ## Links to Figma
 
-###### [Figma design](https://www.figma.com/design/dD4zavEELTEJJxVW2sgOng/QRCodes?node-id=0-1&p=f&t=hoq6ytxS9OIiShk8-0)
-###### [Database structure](https://www.figma.com/board/fh5w7gS5vMyNq2XMGbz0t5/Untitled?node-id=1-158&t=GVmB93k6Oyui0oQP-0)
+#### [Figma design](https://www.figma.com/design/dD4zavEELTEJJxVW2sgOng/QRCodes?node-id=0-1&p=f&t=hoq6ytxS9OIiShk8-0)
+#### [Database structure](https://www.figma.com/board/fh5w7gS5vMyNq2XMGbz0t5/Untitled?node-id=1-158&t=GVmB93k6Oyui0oQP-0)
 
 
 ## Project structure
@@ -306,7 +333,7 @@ git clone https://github.com/BoiarkinaOryna/Django_QRCodes.git
 
 1. On the authorization page, a new user logs in to their existing account. ![Site screen](readme_images/auth.png)
 
-```
+```ruby
 def render_authorization(request: HttpRequest):
     fail = False
     if request.method == "POST":
@@ -325,7 +352,7 @@ def render_authorization(request: HttpRequest):
             fail = True
     return render(
         request=request,
-        template_name='authorization.html',
+        template_name='authorization.html,
         context = {
             'fail': fail,
             'authenticated': request.user.is_authenticated
@@ -336,7 +363,7 @@ def render_authorization(request: HttpRequest):
 - You can log in from any page of the site by clicking on the corresponding card in the header.
 The display function redirects the user to the account login page.
 
-```
+```ruby
 def render_logout(request):
     logout(request = request)
     return redirect('authorization')
@@ -357,7 +384,7 @@ e-mail address, the subject of the feedback and the comment itself. ![Site scree
     - desktopquantity - if the user has purchased a desktop subscription, this field contains the maximum number of QR codes!
     After the user has chosen the best option for themselves, they click the Generate button.
 
-```
+```ruby
 def render_main(request: HttpRequest):
     if request.method == "POST":
         if request.user:
@@ -393,7 +420,7 @@ def render_main(request: HttpRequest):
     description - responsible for the description of the QR code
     center_image - is responsible for the image in the center of the QR code!
 
-```
+```ruby
 @login_required
 def render_create_code(request: HttpRequest):
     ...
@@ -429,7 +456,7 @@ def render_create_code(request: HttpRequest):
 
 3. The My QR Codes page displays the QR codes created by the user. ![Site screen](readme_images/my_codes.png)
 
-```
+```ruby
 @login_required
 def render_my_codes_page(request: HttpRequest):
     codes = Code.objects.filter(creator = request.user)
@@ -452,7 +479,7 @@ def render_my_codes_page(request: HttpRequest):
 
 4. On the registration page, the new user enters his or her data and creates a password that will be used in the future. ![Site screen](readme_images/reg.png)
 
-```
+```ruby
 def render_registretion(request: HttpRequest):
     if request.method == "POST":
         ...
@@ -473,7 +500,7 @@ def render_registretion(request: HttpRequest):
         
     return render(
         request=request,
-        template_name='registration.html',
+        template_name='registration.html,
         context = {
             'authenticated': request.user.is_authenticated,
             'password_error': password_error,
@@ -487,25 +514,52 @@ def render_registretion(request: HttpRequest):
 
 ##### To launch the site locally, you need to download it.
 
-1. First, follow the link to [GitHub] (https://github.com/BoiarkinaOryna/Django_QRCodes). 
-At the top right of the folders, there will be a green __Code__ button that you need to click.
+> [!IMPORTANT]
+> If git or python are not loaded on your PC, you can fix it, using the following instructions:
+
+- [x] Using [the site](https://git-scm.com/downloads) you can download git.
+- [x] In order to install python, use [this site](https://www.python.org/downloads).
+
+1. Firstly, follow the link to [GitHub] (https://github.com/BoiarkinaOryna/Django_QRCodes). 
+At the top right corner of the folders, there will be a green __Code__ button that you should click.
 ![Site screen](readme_images/start0.jpg)
-2. You will be taken to a possible window from which you can download the code in two ways.
-- Slope the project by entering the command in the terminal (command line):
-```
+2. You will be taken to a modal window from which you can download the code in two ways.
+- Clone the project by entering the command in the terminal (command line):
+```ruby
 git clone https://github.com/BoiarkinaOryna/Django_QRCodes.git
 ```
-- Download the project in zip-format (then you need to unzip it).
+- Download the project in zip format (then unzip it).
 ![Site screen](readme_images/start1.jpg)
-3. Open the project folder in the coding environment, for example, VS-code and open the terminal in the upper left corner.
+3. Open the folder with the project in a coding environment, for example, VS-code (download it [on the page](https://code.visualstudio.com/download)) and open the terminal in the upper left corner.
 ![Site screen](readme_images/start2.jpg)
 4. In the terminal, enter the following commands:
-![Site screen](readme_images/start4-3.png)
+> [!IMPORTANT]  
+> If you are using Windows, do not put a “3” after “pip” and “python” in the following commands.
+```ruby
+pip3 install -r requirements.txt
+```
+After that, all the necessary modules will be downloaded. If you wish, you can create a virtual environment.
+Next:
+![Site screen](readme_images/start4.png)
 After that, you just need to hold down __cntrl__ and click __left mouse button__ on the link.
+
 
 ## Conclusion
 
-- The first Django project turned out to be very useful, as we use it in our lives for various things, not just for practice. This project was very important because it was the beginning of our work with the new framework, and we hope it won't be the last.
-- When writing the code, we had quite a few difficulties, ranging from the easiest, like creating a QR code customization form, to the most difficult, like working with media files. There were also problems with the page processing using __JavaScript__ and getting acquainted with the __qrcodes__ library. But we easily solved these problems because we were prepared for the fact that there would be a lot of new information for us, and the whole team quickly learned everything.
-- Our project is a universal QR code site, so there is almost nothing to correct or add, but of course, over time, when we have more practice than we do now, we can adjust the design. But if we talk about improving the project now, we can add more options for purchasing subscriptions, as it is difficult to find the perfect subscription for each person. More options for customizing QR codes could be added to the code creation page. 
+- #### We used many technologies, both new and old, namely:
+1. This was the first full-fledged project on the Django framework.
+2. We used git for version control. With the help of branches, teamwork was more flexible.
+3. HTML, css are the face of our website.
+4. We used jinja2 to reduce an amount of code and to provide different options when working with pages. 
+5. To work on the frontend, we used JavaScript.
+6. QR codes are generated using the qrcodes library.
+7. Figma was used to develop the design, to systematize the applications and to plan the database.
+8. Information about users, subscriptions and QR codes was stored in a sqlite database.
+9. Virtual environment technology was used.
+
+- #### The first Django project turned out to be very useful, as we use it in our lives for various things, not just for practice. This project was very important because it was the beginning of our work with the new framework, and we hope it won't be the last.
+  
+- #### When writing the code, we had quite a few difficulties, ranging from the easiest, like creating a QR code customization form, to the most difficult, like working with media files. There were also problems with the page processing using __JavaScript__ and getting acquainted with the __qrcodes__ library. But we easily solved these problems because we were prepared for the fact that there would be a lot of new information for us, and the whole team quickly learned everything.
+  
+- #### Our project is a universal QR code site, so there is almost nothing to correct or add, but of course, over time, when we have more practice than we do now, we can adjust the design. But if we talk about improving the project now, we can add more options for purchasing subscriptions, as it is difficult to find the perfect subscription for each person. More options for customizing QR codes could be added to the code creation page. 
 
