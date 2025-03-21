@@ -26,6 +26,8 @@ English version is [_below_](#qr-code-generator).
 
 1. [Бояркіна Орина](https://github.com/BoiarkinaOryna/Django_QRCodes)
 2. [Філинська Дар'я](https://github.com/DariaFilinskaya/Django_QRCodes)
+3. [Іванов Іван](https://github.com/Ivanov-ivan123/-Django_QRCodes)
+
 
 
 ## Посилання на Figma
@@ -307,6 +309,7 @@ pip3 install -r requirements.txt
 
 1. [Boyarkina Oryna](https://github.com/BoiarkinaOryna/Django_QRCodes)
 2. [Filynska Daria](https://github.com/DariaFilinskaya/Django_QRCodes)
+3. [Ivanov Ivan](https://github.com/Ivanov-ivan123/-Django_QRCodes)
 
 ## Links to Figma
 
@@ -562,4 +565,3 @@ After that, you just need to hold down __cntrl__ and click __left mouse button__
 - #### When writing the code, we had quite a few difficulties, ranging from the easiest, like creating a QR code customization form, to the most difficult, like working with media files. There were also problems with the page processing using __JavaScript__ and getting acquainted with the __qrcodes__ library. But we easily solved these problems because we were prepared for the fact that there would be a lot of new information for us, and the whole team quickly learned everything.
   
 - #### Our project is a universal QR code site, so there is almost nothing to correct or add, but of course, over time, when we have more practice than we do now, we can adjust the design. But if we talk about improving the project now, we can add more options for purchasing subscriptions, as it is difficult to find the perfect subscription for each person. More options for customizing QR codes could be added to the code creation page. 
-
